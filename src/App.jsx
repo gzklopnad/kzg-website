@@ -1,18 +1,16 @@
+import Navbar from "./Components/Navbar.jsx";
+import Header from "./Components/Header.jsx";
 
-import Header from './Components/Header';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import './App.css'
-
-function App() {
+const App = () => {
     return (
         <div>
-            <Header/>
-
+            <Navbar></Navbar>
             <main>
-                <About/>
-                <Contact/>
+                <div >
+                    <Header> </Header>
+                </div>
             </main>
+
         </div>
 
 
