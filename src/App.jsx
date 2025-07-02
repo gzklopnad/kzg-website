@@ -1,18 +1,14 @@
+import Navbar from "./Components/Navbar.jsx";
+import PageIcon from "./Components/PageIcon.jsx";
 
-import Header from './Components/Header';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import './App.css'
 
-function App() {
+
+const App = () => {
     return (
-        <div>
-            <Header/>
+        <div className="font" >
+            <Navbar color="dark" dark expand="lg"></Navbar>
 
-            <main>
-                <About/>
-                <Contact/>
-            </main>
+
         </div>
 
 
