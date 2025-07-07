@@ -3,20 +3,25 @@ import {Link} from 'react-scroll';
 import PageIcon from "./PageIcon.jsx";
 
 const Navbar = () => {
+
     // i18n translation
      const { t, i18n } = useTranslation();
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
     };
+
     return (
 
 
-                <div className="flex flex-row justify-between sticky w-full px-4 py-3 bg-emerald  font-headers text-white shadow-xl  top-0 z-50 ">
-                    <div className="flex  items-center">
+                <div className="flex flex-row justify-between sticky w-full px-6 sm:px-12 lg:px-24 py-3 bg-emerald  font-headers text-white shadow-xl  top-0 z-50 ">
+
+                    {/* Company logo */}
+                    <div className="flex  items-center ">
                         <PageIcon/>
                     </div>
-                    <nav className="flex space-x-6 text-sm md:text-xl items-center
- ">
+
+                    {/* Nav buttons acting as links*/}
+                    <nav className="flex space-x-6 text-sm md:text-xl items-center">
                         <Link to="About Us" spy={true} smooth={true} duration={300} cursor-pointer className="hover:text-gold transition-colors duration-500 cursor-pointer">
                             About Us
                         </Link>

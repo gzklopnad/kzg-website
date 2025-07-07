@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+
     // i18n translation
     const { t, i18n } = useTranslation();
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
     };
+
     return (
         <div className="relative w-full  h-[60vh] md:h-[80vh]">
             {/* Background video */}
