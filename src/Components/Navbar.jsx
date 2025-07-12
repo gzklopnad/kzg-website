@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
 
 
-                <div className="flex flex-row justify-between sticky w-full px-6 sm:px-12 lg:px-24 py-3 bg-emerald  font-headers text-white shadow-xl  top-0 z-50 ">
+                <div className="flex flex-row bg-op justify-between sticky w-full px-6 sm:px-12 lg:px-24 py-3 bg font-headers text-white shadow-xl  top-0 z-50 bg-lighter-main/40 ">
 
                     {/* Company logo */}
                     <div className="flex  items-center ">
@@ -22,13 +22,31 @@ const Navbar = () => {
 
                     {/* Nav buttons acting as links*/}
                     <nav className="flex space-x-6 text-sm md:text-xl items-center">
-                        <Link to="About Us" spy={true} smooth={true} duration={300} cursor-pointer className="hover:text-gold transition-colors duration-500 cursor-pointer">
+                        <Link to="about" spy={true} smooth={true} duration={500} cursor-pointer
+                              className="font-regular hover:text-gold transition-colors duration-500
+                              cursor-pointer relative after:absolute
+                              after:bottom-0 after:left-0 after:h-0.5
+                              after:w-full after:origin-bottom-right
+                               after:scale-x-0 after:bg-gold after:transition-transform
+                               after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100">
                             About Us
                         </Link>
-                        <Link to="Services" spy={true} smooth={true} duration={300} cursor-pointer className="hover:text-gold transition-colors duration-500 cursor-pointer">
+                        <Link to="services" spy={true} smooth={true} duration={500} cursor-pointer
+                              className="font-regular hover:text-gold transition-colors duration-500
+                              cursor-pointer relative after:absolute
+                              after:bottom-0 after:left-0 after:h-0.5
+                              after:w-full after:origin-bottom-right
+                               after:scale-x-0 after:bg-gold after:transition-transform
+                               after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100">
                             Services
                         </Link>
-                        <Link to="Contact" spy={true} smooth={true} duration={300} cursor-pointer className="hover:text-gold transition-colors duration-500 cursor-pointer">
+                        <Link to="contact" spy={true} smooth={true} duration={500} cursor-pointer
+                              className="font-regular hover:text-gold transition-colors duration-500
+                              cursor-pointer relative after:absolute
+                              after:bottom-0 after:left-0 after:h-0.5
+                              after:w-full after:origin-bottom-right
+                               after:scale-x-0 after:bg-gold after:transition-transform
+                               after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100">
                             Contact
                         </Link>
                     </nav>

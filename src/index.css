@@ -6,14 +6,17 @@
     --font-headers: 'Montserrat', sans-serif;
     --font-regular: 'Poppins', sans-serif;
     --color-gold: #ffb347;
-    --color-mint: #4bb3a1;
-    --color-light:#e0f7f7;
-    --color-emerald: #033931;
-    --color-orange: #ffa500;
+    --color-button: #43527c;
+    --color-lighter-main: #0f3b68;
+    --color-ambergold: #FFC145 ;
     --color-darkgray: #1f1f1f;
-    --color-mainteal: #008080;
+    --color-main: #0d1b2a;
+    --color-secondary: #f5f7fa;
+    --color-light: #3c7ab3;
+    --color-lightest: #639bd8;
+    --color-gradient: #1f0f68;
 }
 body{
-    background-color: var(--color-mainteal);
+
 
 }

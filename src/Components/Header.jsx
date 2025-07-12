@@ -26,7 +26,7 @@ const Header = () => {
             {/* Text content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
                 <h2 className="text-4xl font-bold mb-4">What We Do</h2>
-                <p className="max-w-xl text-lg">We deliver global logistics through seamless rail, sea, and road integration.</p>
+                <p className="max-w-xl text-l font-headers font-extrabold">We deliver global logistics through seamless rail, sea, and road integration.</p>
             </div>
         </div>
 
