@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-
-const Header = () => {
+import { motion} from "motion/react"
+const Hero = () => {
 
     // i18n translation
     const { t, i18n } = useTranslation();
@@ -9,7 +9,7 @@ const Header = () => {
     };
 
     return (
-        <div className="relative w-full  h-[60vh] md:h-[80vh]">
+        <div className="relative w-full  h-[100vh] md:h-[100vh]">
             {/* Background video */}
             <video
                 autoPlay
@@ -25,12 +25,12 @@ const Header = () => {
 
             {/* Text content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
-                <h2 className="text-4xl font-bold mb-4">What We Do</h2>
-                <p className="max-w-xl text-l font-headers font-extrabold">We deliver global logistics through seamless rail, sea, and road integration.</p>
+                <h2 className="text-4xl  mb-4 font-headers font-medium italic">What We Do</h2>
+                <p className="max-w-xl text-l font-regular font-light">We deliver global logistics through seamless rail, sea, and road integration.</p>
             </div>
         </div>
 
 
     );
 }
-export default Header;
+export default Hero;

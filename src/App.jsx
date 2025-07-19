@@ -1,5 +1,5 @@
 import Navbar from "./Components/Navbar.jsx";
-import Header from "./Components/Header.jsx";
+import Hero from "./Components/Hero.jsx";
 import Contact from "./Components/Contact.jsx";
 import Services from "./Components/Services.jsx";
 
@@ -10,7 +10,7 @@ const App = () => {
             <main>
                 <div >
                     <div id="about">
-                        <Header> </Header>
+                        <Hero> </Hero>
                     </div>
                     <div id="services">
                         <Services></Services>
