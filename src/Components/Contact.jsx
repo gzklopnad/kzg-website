@@ -40,10 +40,11 @@ const Contact = () => {
     };
 
     return (
-        <div className="flex flex-col md:flex-row w-full h-[30vh] md:h-[50vh] lg:bg-gradient-to-r from-main from-20% via-lighter-main via-50% to-light to-100%   ">
+        <div className="flex flex-col md:flex-row w-full h-auto md:h-[50vh] bg-main md:bg-gradient-to-r md:from-main md:from-20% md:via-lighter-main md:via-50% md:to-light md:to-100%">
 
-            {/* Contact us */}
-            <div className="w-full md:w-1/2 bg-left p-6 flex flex-col justify-center items-center bg-transparent">
+
+        {/* Contact us */}
+            <div className="w-full md:w-1/2 bg-left p-6 flex flex-col justify-center items-center ">
                 <h2 className="text-4xl md:text-6xl font-light italic text-white text-center font-headers">
                     Contact Us
                 </h2>
@@ -65,7 +66,7 @@ const Contact = () => {
             </div>
 
             {/* Email form */}
-            <div className="w-full md:w-1/2 bg-right p-6 flex flex-col justify-center bg-transparent gap-10 ">
+            <div className="w-full md:w-1/2 bg-right p-6 flex flex-col justify-center  gap-10 ">
                 {!state.succeeded /* showThankYou */ ? (
                     <form onSubmit={customSubmit} className="flex flex-col space-y-4">
                         <input
