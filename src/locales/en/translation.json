@@ -1,0 +1,94 @@
+{
+  "navbar": {
+        "about": "About Us",
+        "services": "Services",
+        "contact": "Contact"
+  },
+
+  "hero": {
+        "title": "What We Do",
+        "step1": "We supply industrial metals, slag, and byproducts with streamlined sourcing and distribution tailored to global industry demands.",
+        "step2": "We deliver global logistics through seamless rail, sea, and road integration.",
+        "step3": "We provide expert advice on transportation strategy, customs clearance, and routing documentation to ensure smooth international operations.",
+        "final1": "We supply.",
+        "final2": "We consult.",
+        "final3": "We deliver."
+  },
+
+  "services": {
+        "title": "Our Services",
+        "subtitle": "What we offer",
+        "globalShipping": {
+          "title": "Global Shipping",
+          "subtitle": "Sea and rail freight across continents",
+          "bullets": [
+            "Wide network of trusted carriers",
+            "Route planning and compliance",
+            "Cost-effective long-haul logistics"
+          ]
+        },
+        "railFreight": {
+          "title": "Rail Freight Coordination",
+          "subtitle": "Efficient inland freight across EU & Asia",
+          "bullets": [
+            "Real-time scheduling",
+            "Multi-country documentation",
+            "Customs and depot handling"
+          ]
+        },
+        "customSolutions": {
+          "title": "Custom Logistics Solutions",
+          "subtitle": "Tailored routing and operations",
+          "bullets": [
+            "Flexible planning by shipment",
+            "Business-specific logistics models",
+            "Scalable coordination tools"
+          ]
+        },
+        "consulting": {
+          "title": "Logistics Consulting",
+          "subtitle": "Expert guidance for complex cargo flows",
+          "bullets": [
+            "Risk assessment for international shipping scenarios",
+            "Advice on customs procedures and regulatory changes",
+            "Cost-to-time optimization strategies for your cargo routes"
+          ]
+        },
+        "metalSupply": {
+          "title": "Industrial Metal Supply",
+          "subtitle": "Reliable sourcing for structural and mechanical needs",
+          "bullets": [
+            "Diverse metal range: flat, tubular, and profiled products",
+            "Supply chain support for just-in-time industrial deliveries",
+            "Certifications and standards compliance for each order"
+          ]
+        },
+        "slagSupply": {
+          "title": "Slag & Byproduct Supply",
+          "subtitle": "Eco-efficient materials for construction",
+          "bullets": [
+            "Consistent slag quality from controlled smelting processes",
+            "Processed for use in concrete additives and road foundation layers",
+            "Sustainable alternative reducing environmental footprint"
+          ]
+        }
+  },
+
+  "contact": {
+        "title": "Contact Us",
+        "thankyou": "Thank you! Your message has been sent.",
+        "alert": "Please complete the CAPTCHA",
+        "form": {
+          "name": "Your name",
+          "email": "Your email",
+          "subject": "Subject",
+          "message": "Your message",
+          "send": "Send"
+        }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,96 @@
+{
+  "navbar": {
+        "about": "O nas",
+        "services": "Usługi",
+        "contact": "Kontakt"
+  },
+
+  "hero": {
+        "title": "Czym się zajmujemy",
+        "step1": "Dostarczamy metale przemysłowe, żużel i produkty uboczne, oferując zoptymalizowane źródła zaopatrzenia i dystrybucji dostosowane do globalnych potrzeb przemysłu.",
+        "step2": "Zapewniamy logistykę globalną dzięki płynnej integracji transportu kolejowego, morskiego i drogowego.",
+        "step3": "Świadczymy fachowe doradztwo w zakresie strategii transportowej, odpraw celnych oraz dokumentacji przewozowej, zapewniając płynność międzynarodowych operacji.",
+        "final1": "Zaopatrujemy.",
+        "final2": "Doradzamy.",
+        "final3": "Dostarczamy."
+  },
+
+  "services": {
+        "title": "Nasze Usługi",
+        "subtitle": "Co oferujemy",
+        "globalShipping": {
+          "title": "Transport Globalny",
+          "subtitle": "Transport morski i kolejowy między kontynentami",
+          "bullets": [
+            "Szeroka sieć zaufanych przewoźników",
+            "Planowanie tras i zgodność z przepisami",
+            "Efektywna kosztowo logistyka dalekiego zasięgu"
+          ]
+        },
+        "railFreight": {
+          "title": "Koordynacja Transportu Kolejowego",
+          "subtitle": "Efektywny transport lądowy w UE i Azji",
+          "bullets": [
+            "Planowanie w czasie rzeczywistym",
+            "Dokumentacja międzynarodowa",
+            "Obsługa celna i magazynowa"
+          ]
+        },
+        "customSolutions": {
+          "title": "Indywidualne Rozwiązania Logistyczne",
+          "subtitle": "Dostosowane trasy i operacje",
+          "bullets": [
+            "Elastyczne planowanie dla każdego ładunku",
+            "Modele logistyczne dopasowane do biznesu",
+            "Skalowalne narzędzia koordynacyjne"
+          ]
+        },
+        "consulting": {
+          "title": "Doradztwo Logistyczne",
+          "subtitle": "Ekspercka pomoc przy skomplikowanych ładunkach",
+          "bullets": [
+            "Ocena ryzyka w scenariuszach międzynarodowych",
+            "Porady dotyczące odpraw celnych i zmian regulacyjnych",
+            "Strategie optymalizacji kosztu względem czasu"
+          ]
+        },
+        "metalSupply": {
+          "title": "Dostawy Metali Przemysłowych",
+          "subtitle": "Niezawodne źródła dla konstrukcji i mechaniki",
+          "bullets": [
+            "Szeroka gama metali: płaskie, rurowe, profilowe",
+            "Wsparcie łańcucha dostaw dla dostaw just-in-time",
+            "Zgodność z certyfikatami i normami dla każdego zamówienia"
+          ]
+        },
+        "slagSupply": {
+          "title": "Dostawy Żużlu i Produktów Ubocznych",
+          "subtitle": "Ekologiczne materiały dla budownictwa",
+          "bullets": [
+            "Spójna jakość żużlu z kontrolowanych procesów hutniczych",
+            "Przetwarzanie do dodatków betonowych i podbudów drogowych",
+            "Zrównoważona alternatywa zmniejszająca wpływ na środowisko"
+          ]
+        }
+  },
+
+  "contact": {
+        "title": "Skontaktuj się z nami",
+        "thankyou": "Dziękujemy! Twoja wiadomość została wysłana.",
+        "alert": "Proszę wypełnić CAPTCHA",
+        "form": {
+          "name": "Twoje imię",
+          "email": "Twój e-mail",
+          "subject": "Temat",
+          "message": "Twoja wiadomość",
+          "send": "Wyślij"
+    }
+  }
+}
+
+
+
+
+
+
+
