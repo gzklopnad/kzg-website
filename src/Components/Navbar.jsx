@@ -11,7 +11,7 @@ const Navbar = ({ onNavClick }) => {
     };
 
     return (
-        <div className="flex flex-row justify-between sticky w-full px-6 sm:px-12 lg:px-24 py-3 font-headers text-white shadow-xl top-0 z-50 bg-lighter-main/40 backdrop-blur-md">
+        <div className="flex flex-row justify-between sticky w-full px-8 sm:px-12 lg:px-24 py-5 sm:py-3 md:py-3 lg:py-3 text-white shadow-xl top-0 z-50 bg-lighter-main/40 backdrop-blur-md">
 
             {/* Company logo */}
             <div className="flex items-center">
@@ -19,7 +19,7 @@ const Navbar = ({ onNavClick }) => {
             </div>
 
             {/* Nav buttons */}
-            <nav className="flex space-x-6 text-sm md:text-xl items-center">
+            <nav className="flex space-x-1.5 sm:space-x-4 md:space-x-6 text-sm md:text-xl items-center">
                 <Link
                     to="about"
                     spy={true}

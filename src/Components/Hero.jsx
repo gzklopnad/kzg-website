@@ -137,7 +137,7 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
                             initial="hidden"
                             animate="visible"
                             variants={fadeIn}
-                            className="absolute top-1/2 translate-y-10 flex flex-col gap-5 font-regular p-3 font-semibold bg-gradient-to-r from-lightestofall from-0% to-lightsecond to-100% bg-clip-text text-transparent text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                            className="absolute top-1/2 translate-y-10 flex flex-col gap-5 font-regular p-3 font-semibold bg-gradient-to-r from-lightestofall from-0% to-lightsecond to-100% bg-clip-text text-transparent text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
                         >
                             <p>{t('hero.final1')}</p>
                             <p>{t('hero.final2')}</p>
