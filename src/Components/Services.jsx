@@ -12,16 +12,16 @@ const servicesData = [
         titleEn: 'Global Container & Bulk Shipping',
         titlePl: 'Kontenerowy i Masowy Fracht Morski',
         subtitleEn: 'Scheduled deep-sea container services and chartered vessel coordination connecting core European ports with international trade corridors.',
-        subtitlePl: 'Regularne przewozy kontenerowe i czartery statków łączące klucze porty europejskie z globalnymi korytarzami handlowymi.',
+        subtitlePl: 'Regularne przewozy kontenerowe i czartery statków łączące kluczowe porty europejskie z globalnymi korytarzami handlowymi.',
         specsEn: [
-            { bold: 'Tier-1 Carrier Allocations', desc: '(FCL/LCL)' },
-            { bold: 'Port Agency & Berthing Oversight', desc: '' },
-            { bold: 'Full Export/Import & T1 Customs Filing', desc: '' }
+            { bold: 'Tier-1 Carrier Allocations', desc: 'FCL / LCL' },
+            { bold: 'Port Agency & Berthing Oversight', desc: 'Direct Control' },
+            { bold: 'Full Export/Import Customs Filing', desc: 'T1 / Customs Brokerage' }
         ],
         specsPl: [
-            { bold: 'Alokacje u Przewoźników Tier-1', desc: '(FCL/LCL)' },
-            { bold: 'Nadzór Agencyjny i Portowy', desc: '' },
-            { bold: 'Kompleksowa Obsługa Celna i T1', desc: '' }
+            { bold: 'Alokacje u Przewoźników Tier-1', desc: 'FCL / LCL' },
+            { bold: 'Nadzór Agencyjny i Portowy', desc: 'Bezpośredni Nadzór' },
+            { bold: 'Kompleksowa Obsługa Celna', desc: 'T1 / Agencja Celna' }
         ],
         buttonEn: 'Inquire Freight Rates',
         buttonPl: 'Wyceń Fracht Morski',
@@ -39,14 +39,14 @@ const servicesData = [
         subtitleEn: 'Dedicated block train services and wagonload transport linking industrial manufacturing hubs across the European Union and Eurasian corridors.',
         subtitlePl: 'Dedykowane pociągi całopociągowe i przewozy wagonowe łączące ośrodki przemysłowe UE i korytarze eurazjatyckie.',
         specsEn: [
-            { bold: 'Standard & Broad Gauge Transshipment', desc: '(1435mm / 1520mm)' },
-            { bold: 'First/Last-Mile Depot & Siding Handling', desc: '' },
-            { bold: 'CIM/SMGS Documentation & Border Brokerage', desc: '' }
+            { bold: 'Standard & Broad Gauge Transshipment', desc: '1435mm / 1520mm' },
+            { bold: 'First/Last-Mile Depot & Siding Handling', desc: 'Terminal Operations' },
+            { bold: 'CIM/SMGS Documentation & Border Brokerage', desc: 'Cross-Border Filing' }
         ],
         specsPl: [
-            { bold: 'Przeładunki Normalno- i Szerokotorowe', desc: '(1435mm / 1520mm)' },
-            { bold: 'Obsługa Bocznic i Terminali', desc: '' },
-            { bold: 'Dokumentacja CIM/SMGS i Agencja Celna', desc: '' }
+            { bold: 'Przeładunki Normalno- i Szerokotorowe', desc: '1435mm / 1520mm' },
+            { bold: 'Obsługa Bocznic i Terminali', desc: 'Operacje Terminalowe' },
+            { bold: 'Dokumentacja CIM/SMGS i Agencja Celna', desc: 'Obsługa Graniczna' }
         ],
         buttonEn: 'Inquire Rail Routes',
         buttonPl: 'Sprawdź Trasy Kolejowe',
@@ -64,14 +64,14 @@ const servicesData = [
         subtitleEn: 'Tailored freight engineering for high-volume supply chains, heavy machinery, out-of-gauge (OOG) project cargo, and recurring industrial lanes.',
         subtitlePl: 'Dedykowane rozwiązania logistyczne dla ładunków gabarytowych (OOG), ciężkich maszyn i przemysłowych łańcuchów dostaw.',
         specsEn: [
-            { bold: 'Heavy Machinery & Out-of-Gauge Chartering', desc: '(OOG)' },
-            { bold: 'Supply Chain Lead-Time & Cost Audits', desc: '' },
-            { bold: 'Dedicated Operations Desk with SLA Windows', desc: '' }
+            { bold: 'Heavy Machinery & Out-of-Gauge Chartering', desc: 'OOG Cargo' },
+            { bold: 'Supply Chain Lead-Time & Cost Audits', desc: 'Cost Optimization' },
+            { bold: 'Dedicated Operations Desk with SLA Windows', desc: '2-Hour SLA' }
         ],
         specsPl: [
-            { bold: 'Czarter Ładunków Ponadgabarytowych', desc: '(OOG)' },
-            { bold: 'Audyt Czasu i Kosztów Łańcucha Dostaw', desc: '' },
-            { bold: 'Dedykowany Zespół Operacyjny z SLA', desc: '' }
+            { bold: 'Czarter Ładunków Ponadgabarytowych', desc: 'Ładunki OOG' },
+            { bold: 'Audyt Czasu i Kosztów Łańcucha Dostaw', desc: 'Optymalizacja' },
+            { bold: 'Dedykowany Zespół Operacyjny z SLA', desc: 'SLA 2-Godziny' }
         ],
         buttonEn: 'Request Custom Routing',
         buttonPl: 'Zamów Projekt Trasy',
@@ -89,14 +89,14 @@ const servicesData = [
         subtitleEn: 'Strategic regulatory guidance and customs architecture designed to mitigate tariff risks, eliminate port delays, and secure critical cargo flows.',
         subtitlePl: 'Doradztwo strategiczne i procedury celne zapobiegające opóźnieniom portowym oraz optymalizujące ryzyko taryfowe.',
         specsEn: [
-            { bold: 'HS Code Tariff Classification & AEO Protocols', desc: '' },
-            { bold: 'Lane Risk Mitigation & Sanction Screening', desc: '' },
-            { bold: 'EU Fiscal Representation & Bonded Storage', desc: '' }
+            { bold: 'HS Code Tariff Classification & AEO Protocols', desc: 'AEO Certified' },
+            { bold: 'Lane Risk Mitigation & Sanction Screening', desc: 'Compliance Audit' },
+            { bold: 'EU Fiscal Representation & Bonded Storage', desc: 'Duty Deferral' }
         ],
         specsPl: [
-            { bold: 'Klasyfikacja Taryfowa HS i Procedury AEO', desc: '' },
-            { bold: 'Analiza Ryzyka Tras i Weryfikacja Sankcyjna', desc: '' },
-            { bold: 'Przedstawicielstwo Fiskalne i Składy Celne', desc: '' }
+            { bold: 'Klasyfikacja Taryfowa HS i Procedury AEO', desc: 'Certyfikat AEO' },
+            { bold: 'Analiza Ryzyka Tras i Weryfikacja Sankcyjna', desc: 'Audyt Zgodności' },
+            { bold: 'Przedstawicielstwo Fiskalne i Składy Celne', desc: 'Odroczenie Cła' }
         ],
         buttonEn: 'Consult an Advisor',
         buttonPl: 'Skonsultuj z Ekspertem',
@@ -114,14 +114,14 @@ const servicesData = [
         subtitleEn: 'Direct-mill sourcing and strategic inventory distribution of structural, mechanical, and precision steel products for fabrication and construction.',
         subtitlePl: 'Bezpośrednie dostawy z hut i dystrybucja wyrobów stalowych, konstrukcyjnych oraz precyzyjnych dla przemysłu.',
         specsEn: [
-            { bold: 'Coils, Heavy Plates & Structural Beams', desc: '' },
-            { bold: 'EN 10204 3.1/3.2 & ASTM Certified Quality', desc: '' },
-            { bold: 'Just-In-Time Direct-to-Site Deliveries', desc: '' }
+            { bold: 'Coils, Heavy Plates & Structural Beams', desc: 'Direct-Mill Sourcing' },
+            { bold: 'EN 10204 3.1/3.2 & ASTM Certified Quality', desc: 'Certified Mill Specs' },
+            { bold: 'Just-In-Time Direct-to-Site Deliveries', desc: 'JIT Logistics' }
         ],
         specsPl: [
-            { bold: 'Blachy w Zwojach, Grube i Profile', desc: '' },
-            { bold: 'Certyfikaty Jakości EN 10204 3.1/3.2 i ASTM', desc: '' },
-            { bold: 'Dostawy Direct-to-Site w Systemie JIT', desc: '' }
+            { bold: 'Blachy w Zwojach, Grube i Profile', desc: 'Prosto z Huty' },
+            { bold: 'Certyfikaty Jakości EN 10204 3.1/3.2 i ASTM', desc: 'Pełne Atesty' },
+            { bold: 'Dostawy Direct-to-Site w Systemie JIT', desc: 'Logistyka JIT' }
         ],
         buttonEn: 'Request Metal Specs',
         buttonPl: 'Zapytaj o Specyfikację Metali',
@@ -139,14 +139,14 @@ const servicesData = [
         subtitleEn: 'Bulk distribution of controlled smelting aggregates and mineral byproducts engineered for high-durability road base, civil foundations, and concrete additives.',
         subtitlePl: 'Hurtowa dystrybucja certyfikowanych kruszyw hutniczych i produktów ubocznych przeznaczonych do budowy dróg i fundamentów.',
         specsEn: [
-            { bold: 'Engineered Compaction Gradations', desc: '(0–31.5mm / 0–63mm)' },
-            { bold: 'REACH-Compliant & Chemically Inert Materials', desc: '' },
-            { bold: 'High-Volume Rail Hopper & Bulk Tanker Logistics', desc: '' }
+            { bold: 'Engineered Compaction Gradations', desc: '0–31.5mm / 0–63mm' },
+            { bold: 'REACH-Compliant & Chemically Inert Materials', desc: 'Eco-Certified' },
+            { bold: 'High-Volume Rail Hopper & Bulk Tanker Logistics', desc: 'Bulk Supply' }
         ],
         specsPl: [
-            { bold: 'Kruszywa o Uziarnieniu Kontrolowanym', desc: '(0–31.5mm / 0–63mm)' },
-            { bold: 'Materiały Zgodne z REACH i Obojętne Chemicznie', desc: '' },
-            { bold: 'Transport Wagonami Węglarkami i Wywrotkami', desc: '' }
+            { bold: 'Kruszywa o Uziarnieniu Kontrolowanym', desc: '0–31.5mm / 0–63mm' },
+            { bold: 'Materiały Zgodne z REACH i Obojętne Chemicznie', desc: 'Certyfikat ECO' },
+            { bold: 'Transport Wagonami Węglarkami i Wywrotkami', desc: 'Dostawy Hurtowe' }
         ],
         buttonEn: 'Inquire Aggregate Specs',
         buttonPl: 'Zapytaj o Specyfikację Kruszyw',
@@ -194,7 +194,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                {/* 50/50 Split Container */}
+                {/* 50/50 Split Container with Crisp Architectural Framing */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeService.key}
@@ -202,53 +202,54 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="grid grid-cols-1 lg:grid-cols-2 items-stretch border border-gray-200 bg-white min-h-[500px]"
+                        className="grid grid-cols-1 lg:grid-cols-2 items-stretch border border-slate-200 rounded-none shadow-sm bg-white min-h-[520px]"
                     >
-                        {/* Left Column: Calibrated Typography & Structured Specs */}
-                        <div className="p-10 lg:p-14 flex flex-col justify-between h-full space-y-8">
-                            <div className="space-y-3">
-                                <div className="text-xs font-headers font-semibold uppercase tracking-wider text-slate-500 mb-2">
+                        {/* Left Column: Calibrated Typography & Structured Data Rows */}
+                        <div className="p-10 lg:p-14 flex flex-col justify-between h-full space-y-8 lg:border-r border-slate-200">
+                            <div>
+                                <div className="text-[11px] font-headers font-bold uppercase tracking-widest text-slate-400 mb-2">
                                     {eyebrow}
                                 </div>
-                                <h3 className="text-3xl sm:text-4xl font-headers font-bold tracking-tight text-slate-950 leading-tight mb-4">
+                                <h3 className="text-3xl sm:text-4xl font-headers font-extrabold tracking-[-0.03em] text-slate-950 leading-[1.12] mb-4">
                                     {title}
                                 </h3>
-                                <p className="text-base font-regular text-slate-600 leading-relaxed mb-6 max-w-xl">
+                                <p className="text-base font-regular text-slate-600 leading-relaxed max-w-lg mb-6">
                                     {subtitle}
                                 </p>
-                            </div>
 
-                            {/* Section Divider & Specs List */}
-                            <div className="border-t border-slate-200 pt-6 mb-6 space-y-4">
-                                <div className="text-xs font-headers font-bold uppercase tracking-wider text-slate-900 mb-4">
-                                    {isPl ? 'ZAKRES USŁUG I SPECYFIKACJA' : 'KEY CAPABILITIES & SPECIFICATIONS'}
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {/* Capability Spec Rows */}
+                                <div className="border-t border-slate-200 divide-y divide-slate-100 pt-2">
+                                    <div className="text-xs font-headers font-bold uppercase tracking-wider text-slate-900 py-3">
+                                        {isPl ? 'ZAKRES USŁUG I SPECYFIKACJA' : 'KEY CAPABILITIES & SPECIFICATIONS'}
+                                    </div>
                                     {specs.map((item, idx) => (
-                                        <div key={idx} className="flex items-start space-x-2.5 text-sm font-regular leading-snug">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-main mt-2 shrink-0" />
-                                            <div>
-                                                <span className="font-headers font-bold text-slate-900">{item.bold}</span>
-                                                {item.desc && <span className="text-slate-600 ml-1 font-regular">{item.desc}</span>}
-                                            </div>
+                                        <div key={idx} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                            <span className="text-xs font-headers font-bold uppercase tracking-wider text-slate-900">
+                                                {item.bold}
+                                            </span>
+                                            {item.desc && (
+                                                <span className="text-sm font-regular text-slate-600">
+                                                    {item.desc}
+                                                </span>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            {/* Dynamic CTA Button */}
-                            <div>
+                            {/* Grounded Primary CTA Button */}
+                            <div className="pt-4">
                                 <a
                                     href="#contact"
-                                    className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-headers font-bold uppercase tracking-wider text-white bg-main hover:bg-lighter-main transition-colors duration-200 rounded-none shadow-sm"
+                                    className="inline-flex items-center justify-center px-6 py-3.5 bg-slate-950 hover:bg-slate-800 text-white font-headers font-semibold text-xs uppercase tracking-wider transition-all duration-200 rounded-none shadow-sm cursor-pointer"
                                 >
                                     {buttonText}
                                 </a>
                             </div>
                         </div>
 
-                        {/* Right Column: Clean Media Display */}
-                        <div className="relative min-h-[380px] sm:min-h-[440px] lg:min-h-[520px] w-full overflow-hidden border-t lg:border-t-0 lg:border-l border-gray-200 bg-gray-100">
+                        {/* Right Column: Full-Bleed Media Display */}
+                        <div className="relative min-h-[380px] sm:min-h-[440px] lg:min-h-[520px] w-full h-full overflow-hidden bg-slate-100">
                             <img
                                 src={activeService.image}
                                 alt={activeService.alt}
