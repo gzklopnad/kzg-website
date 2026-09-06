@@ -5,73 +5,173 @@ import { motion, AnimatePresence } from 'motion/react';
 const servicesData = [
     {
         key: 'globalShipping',
-        code: '01 / MARITIME & GLOBAL LOGISTICS',
         labelEn: '01 SHIPPING',
-        labelPl: '01 WYSYŁKA',
-        compliance: ['ISO 9001:2015', 'AEO CERTIFIED', 'EU REGULATORY COMPLIANT'],
+        labelPl: '01 SPEDYCJA',
+        eyebrowEn: 'OCEAN & MARITIME FREIGHT',
+        eyebrowPl: 'FRACHT MORSKI I OCEANICZNY',
+        titleEn: 'Global Container & Bulk Shipping',
+        titlePl: 'Kontenerowy i Masowy Fracht Morski',
+        subtitleEn: 'Scheduled deep-sea container services and chartered vessel coordination connecting core European ports with international trade corridors.',
+        subtitlePl: 'Regularne przewozy kontenerowe i czartery statków łączące klucze porty europejskie z globalnymi korytarzami handlowymi.',
+        specsEn: [
+            { bold: 'Tier-1 Carrier Allocations', desc: '(FCL/LCL)' },
+            { bold: 'Port Agency & Berthing Oversight', desc: '' },
+            { bold: 'Full Export/Import & T1 Customs Filing', desc: '' }
+        ],
+        specsPl: [
+            { bold: 'Alokacje u Przewoźników Tier-1', desc: '(FCL/LCL)' },
+            { bold: 'Nadzór Agencyjny i Portowy', desc: '' },
+            { bold: 'Kompleksowa Obsługa Celna i T1', desc: '' }
+        ],
+        buttonEn: 'Inquire Freight Rates',
+        buttonPl: 'Wyceń Fracht Morski',
         image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80',
         alt: 'Container cargo ship operating global freight'
     },
     {
         key: 'railFreight',
-        code: '02 / EURASIAN RAIL FREIGHT',
         labelEn: '02 RAIL',
         labelPl: '02 KOLEJ',
-        compliance: ['ISO 9001:2015', 'CIM/SMGS DOCUMENTED', 'INTERMODAL VERIFIED'],
+        eyebrowEn: 'INLAND INTERMODAL TRANSIT',
+        eyebrowPl: 'TRANSPORT KOLEJOWY I INTERMODALNY',
+        titleEn: 'Cross-Border Rail Freight Coordination',
+        titlePl: 'Międzynarodowa Koordynacja Przewozów Kolejowych',
+        subtitleEn: 'Dedicated block train services and wagonload transport linking industrial manufacturing hubs across the European Union and Eurasian corridors.',
+        subtitlePl: 'Dedykowane pociągi całopociągowe i przewozy wagonowe łączące ośrodki przemysłowe UE i korytarze eurazjatyckie.',
+        specsEn: [
+            { bold: 'Standard & Broad Gauge Transshipment', desc: '(1435mm / 1520mm)' },
+            { bold: 'First/Last-Mile Depot & Siding Handling', desc: '' },
+            { bold: 'CIM/SMGS Documentation & Border Brokerage', desc: '' }
+        ],
+        specsPl: [
+            { bold: 'Przeładunki Normalno- i Szerokotorowe', desc: '(1435mm / 1520mm)' },
+            { bold: 'Obsługa Bocznic i Terminali', desc: '' },
+            { bold: 'Dokumentacja CIM/SMGS i Agencja Celna', desc: '' }
+        ],
+        buttonEn: 'Inquire Rail Routes',
+        buttonPl: 'Sprawdź Trasy Kolejowe',
         image: 'https://unsplash.com/photos/JQ6knLuGZAA/download?w=1200',
         alt: 'Train yard filled with lots of different trains'
     },
     {
         key: 'customSolutions',
-        code: '03 / ENTERPRISE SUPPLY CHAIN',
         labelEn: '03 SOLUTIONS',
-        labelPl: '03 ROZWIĄZANIA',
-        compliance: ['ISO 9001:2015', 'SCALABLE INFRASTRUCTURE', 'SUPPLY CHAIN AUDITED'],
+        labelPl: '03 PROJEKTY',
+        eyebrowEn: 'CONTRACT & PROJECT LOGISTICS',
+        eyebrowPl: 'LOGISTYKA KONTRAKTOWA I PROJEKTOWA',
+        titleEn: 'Custom Industrial Routing Solutions',
+        titlePl: 'Dedykowane Inżynieryjne Rozwiązania Logistyczne',
+        subtitleEn: 'Tailored freight engineering for high-volume supply chains, heavy machinery, out-of-gauge (OOG) project cargo, and recurring industrial lanes.',
+        subtitlePl: 'Dedykowane rozwiązania logistyczne dla ładunków gabarytowych (OOG), ciężkich maszyn i przemysłowych łańcuchów dostaw.',
+        specsEn: [
+            { bold: 'Heavy Machinery & Out-of-Gauge Chartering', desc: '(OOG)' },
+            { bold: 'Supply Chain Lead-Time & Cost Audits', desc: '' },
+            { bold: 'Dedicated Operations Desk with SLA Windows', desc: '' }
+        ],
+        specsPl: [
+            { bold: 'Czarter Ładunków Ponadgabarytowych', desc: '(OOG)' },
+            { bold: 'Audyt Czasu i Kosztów Łańcucha Dostaw', desc: '' },
+            { bold: 'Dedykowany Zespół Operacyjny z SLA', desc: '' }
+        ],
+        buttonEn: 'Request Custom Routing',
+        buttonPl: 'Zamów Projekt Trasy',
         image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
         alt: 'Logistics cargo hub warehouse facility'
     },
     {
         key: 'consulting',
-        code: '04 / REGULATORY & CUSTOMS ADVISORY',
         labelEn: '04 ADVISORY',
         labelPl: '04 DORADZTWO',
-        compliance: ['ISO 9001:2015', 'CUSTOMS ACCREDITED', 'RISK COMPLIANT'],
+        eyebrowEn: 'TRADE ADVISORY & COMPLIANCE',
+        eyebrowPl: 'DORADZTWO CELNE I REGULACYJNE',
+        titleEn: 'Supply Chain & Customs Consulting',
+        titlePl: 'Konsulting Celny i Architektura Łańcucha Dostaw',
+        subtitleEn: 'Strategic regulatory guidance and customs architecture designed to mitigate tariff risks, eliminate port delays, and secure critical cargo flows.',
+        subtitlePl: 'Doradztwo strategiczne i procedury celne zapobiegające opóźnieniom portowym oraz optymalizujące ryzyko taryfowe.',
+        specsEn: [
+            { bold: 'HS Code Tariff Classification & AEO Protocols', desc: '' },
+            { bold: 'Lane Risk Mitigation & Sanction Screening', desc: '' },
+            { bold: 'EU Fiscal Representation & Bonded Storage', desc: '' }
+        ],
+        specsPl: [
+            { bold: 'Klasyfikacja Taryfowa HS i Procedury AEO', desc: '' },
+            { bold: 'Analiza Ryzyka Tras i Weryfikacja Sankcyjna', desc: '' },
+            { bold: 'Przedstawicielstwo Fiskalne i Składy Celne', desc: '' }
+        ],
+        buttonEn: 'Consult an Advisor',
+        buttonPl: 'Skonsultuj z Ekspertem',
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
         alt: 'B2B logistics strategy consulting session'
     },
     {
         key: 'metalSupply',
-        code: '05 / METALLURGICAL PRODUCTS',
         labelEn: '05 METALS',
         labelPl: '05 METALE',
-        compliance: ['ISO 9001:2015', 'EN STANDARDS CERTIFIED', 'JIT DELIVERY VERIFIED'],
+        eyebrowEn: 'RAW MATERIALS & METALLURGY',
+        eyebrowPl: 'METALE I SUROWCE PRZEMYSŁOWE',
+        titleEn: 'Structural & Industrial Metal Supply',
+        titlePl: 'Dostawy Metali Przemysłowych i Konstrukcyjnych',
+        subtitleEn: 'Direct-mill sourcing and strategic inventory distribution of structural, mechanical, and precision steel products for fabrication and construction.',
+        subtitlePl: 'Bezpośrednie dostawy z hut i dystrybucja wyrobów stalowych, konstrukcyjnych oraz precyzyjnych dla przemysłu.',
+        specsEn: [
+            { bold: 'Coils, Heavy Plates & Structural Beams', desc: '' },
+            { bold: 'EN 10204 3.1/3.2 & ASTM Certified Quality', desc: '' },
+            { bold: 'Just-In-Time Direct-to-Site Deliveries', desc: '' }
+        ],
+        specsPl: [
+            { bold: 'Blachy w Zwojach, Grube i Profile', desc: '' },
+            { bold: 'Certyfikaty Jakości EN 10204 3.1/3.2 i ASTM', desc: '' },
+            { bold: 'Dostawy Direct-to-Site w Systemie JIT', desc: '' }
+        ],
+        buttonEn: 'Request Metal Specs',
+        buttonPl: 'Zapytaj o Specyfikację Metali',
         image: 'https://unsplash.com/photos/ENiGFCmBYj4/download?w=1200',
         alt: 'Black and yellow metal tank'
     },
     {
         key: 'slagSupply',
-        code: '06 / INDUSTRIAL BYPRODUCTS',
         labelEn: '06 SLAG & BYPRODUCTS',
-        labelPl: '06 ŻUŻEL I PRODUKTY UBOŻNE',
-        compliance: ['ISO 9001:2015', 'REACH COMPLIANT', 'ECO-CERTIFIED AGGREGATE'],
+        labelPl: '06 ŻUŻEL I KRUSZYWA',
+        eyebrowEn: 'CIRCULAR INDUSTRIAL AGGREGATES',
+        eyebrowPl: 'PRODUKTY UBOCZNE I KRUSZYWA HUTNICZE',
+        titleEn: 'Metallurgical Slag & Byproduct Sourcing',
+        titlePl: 'Dystrybucja Żużla i Produktów Ubocznych',
+        subtitleEn: 'Bulk distribution of controlled smelting aggregates and mineral byproducts engineered for high-durability road base, civil foundations, and concrete additives.',
+        subtitlePl: 'Hurtowa dystrybucja certyfikowanych kruszyw hutniczych i produktów ubocznych przeznaczonych do budowy dróg i fundamentów.',
+        specsEn: [
+            { bold: 'Engineered Compaction Gradations', desc: '(0–31.5mm / 0–63mm)' },
+            { bold: 'REACH-Compliant & Chemically Inert Materials', desc: '' },
+            { bold: 'High-Volume Rail Hopper & Bulk Tanker Logistics', desc: '' }
+        ],
+        specsPl: [
+            { bold: 'Kruszywa o Uziarnieniu Kontrolowanym', desc: '(0–31.5mm / 0–63mm)' },
+            { bold: 'Materiały Zgodne z REACH i Obojętne Chemicznie', desc: '' },
+            { bold: 'Transport Wagonami Węglarkami i Wywrotkami', desc: '' }
+        ],
+        buttonEn: 'Inquire Aggregate Specs',
+        buttonPl: 'Zapytaj o Specyfikację Kruszyw',
         image: 'https://unsplash.com/photos/ZLzkwU49BdY/download?w=1200',
         alt: 'Large piece of molten metal being poured onto a machine'
     }
 ];
 
 const Services = () => {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
     const isPl = (i18n.language || 'en').startsWith('pl');
 
     const activeService = servicesData[activeIndex];
-    const activeBullets = t(`services.${activeService.key}.bullets`, { returnObjects: true }) || [];
+    const specs = isPl ? activeService.specsPl : activeService.specsEn;
+    const eyebrow = isPl ? activeService.eyebrowPl : activeService.eyebrowEn;
+    const title = isPl ? activeService.titlePl : activeService.titleEn;
+    const subtitle = isPl ? activeService.subtitlePl : activeService.subtitleEn;
+    const buttonText = isPl ? activeService.buttonPl : activeService.buttonEn;
 
     return (
         <section id="services" className="bg-white text-main py-16 lg:py-24 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-8">
 
-                {/* Structured B2B Tab Bar */}
+                {/* Structured Clean Tab Bar */}
                 <div className="border-b border-gray-200">
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
                         {servicesData.map((service, idx) => {
@@ -81,10 +181,10 @@ const Services = () => {
                                 <button
                                     key={service.key}
                                     onClick={() => setActiveIndex(idx)}
-                                    className={`py-3 px-2 text-xs font-mono uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer text-center border-b-2 rounded-none ${
+                                    className={`py-3.5 px-3 text-xs sm:text-sm font-headers uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer text-center border-b-2 rounded-none ${
                                         isSelected
-                                            ? 'text-main border-main bg-gray-50'
-                                            : 'text-gray-500 hover:text-gray-900 border-transparent hover:bg-gray-50/50'
+                                            ? 'text-main border-main bg-gray-50/80 font-bold'
+                                            : 'text-gray-500 hover:text-gray-900 border-transparent hover:bg-gray-50/40'
                                     }`}
                                 >
                                     {label}
@@ -104,67 +204,57 @@ const Services = () => {
                         transition={{ duration: 0.25, ease: 'easeOut' }}
                         className="grid grid-cols-1 lg:grid-cols-2 items-stretch border border-gray-200 bg-white min-h-[500px]"
                     >
-                        {/* Left Column: Information & Micro-Spec Grid */}
-                        <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-8">
-                            <div className="space-y-4">
-                                <div className="font-mono text-xs font-semibold uppercase tracking-widest text-gray-500">
-                                    {activeService.code}
+                        {/* Left Column: Calibrated Typography & Structured Specs */}
+                        <div className="p-10 lg:p-14 flex flex-col justify-between h-full space-y-8">
+                            <div className="space-y-3">
+                                <div className="text-xs font-headers font-semibold uppercase tracking-wider text-slate-500 mb-2">
+                                    {eyebrow}
                                 </div>
-                                <h3 className="text-3xl sm:text-4xl font-headers font-extrabold text-main tracking-tight">
-                                    {t(`services.${activeService.key}.title`)}
+                                <h3 className="text-3xl sm:text-4xl font-headers font-bold tracking-tight text-slate-950 leading-tight mb-4">
+                                    {title}
                                 </h3>
-                                <p className="text-base sm:text-lg font-regular text-gray-700 font-light leading-relaxed">
-                                    {t(`services.${activeService.key}.subtitle`)}
+                                <p className="text-base font-regular text-slate-600 leading-relaxed mb-6 max-w-xl">
+                                    {subtitle}
                                 </p>
                             </div>
 
-                            {/* Micro-Spec Grid */}
-                            <div className="pt-6 border-t border-gray-200 space-y-3">
-                                <div className="font-mono text-[11px] font-bold uppercase tracking-wider text-gray-400">
-                                    {isPl ? 'SPECYFIKACJA I ZAKRES OPERACYJNY' : 'CAPABILITY & OPERATIONAL SPECS'}
+                            {/* Section Divider & Specs List */}
+                            <div className="border-t border-slate-200 pt-6 mb-6 space-y-4">
+                                <div className="text-xs font-headers font-bold uppercase tracking-wider text-slate-900 mb-4">
+                                    {isPl ? 'ZAKRES USŁUG I SPECYFIKACJA' : 'KEY CAPABILITIES & SPECIFICATIONS'}
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    {Array.isArray(activeBullets) && activeBullets.map((point, idx) => (
-                                        <div key={idx} className="flex items-start space-x-2 text-xs sm:text-sm font-mono text-gray-800 uppercase tracking-wider">
-                                            <span className="w-1.5 h-1.5 rounded-none bg-main mt-1.5 shrink-0" />
-                                            <span>{point}</span>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {specs.map((item, idx) => (
+                                        <div key={idx} className="flex items-start space-x-2.5 text-sm font-regular leading-snug">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-main mt-2 shrink-0" />
+                                            <div>
+                                                <span className="font-headers font-bold text-slate-900">{item.bold}</span>
+                                                {item.desc && <span className="text-slate-600 ml-1 font-regular">{item.desc}</span>}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            {/* Primary Action Button */}
+                            {/* Dynamic CTA Button */}
                             <div>
                                 <a
                                     href="#contact"
-                                    className="inline-flex items-center justify-center px-8 py-3.5 bg-main text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-lighter-main transition-colors duration-200 rounded-none shadow-sm"
+                                    className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-headers font-bold uppercase tracking-wider text-white bg-main hover:bg-lighter-main transition-colors duration-200 rounded-none shadow-sm"
                                 >
-                                    {isPl ? 'ZAPYTAJ O SPECYFIKACJĘ ↗' : 'INQUIRE SOURCING SPECS ↗'}
+                                    {buttonText}
                                 </a>
                             </div>
                         </div>
 
-                        {/* Right Column: Full-Bleed Media & Compliance Bar */}
-                        <div className="relative min-h-[360px] sm:min-h-[420px] lg:min-h-[500px] w-full overflow-hidden border-t lg:border-t-0 lg:border-l border-gray-200 bg-gray-100">
+                        {/* Right Column: Clean Media Display */}
+                        <div className="relative min-h-[380px] sm:min-h-[440px] lg:min-h-[520px] w-full overflow-hidden border-t lg:border-t-0 lg:border-l border-gray-200 bg-gray-100">
                             <img
                                 src={activeService.image}
                                 alt={activeService.alt}
                                 className="absolute inset-0 w-full h-full object-cover"
                                 loading="lazy"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-
-                            {/* Institutional Compliance Badge */}
-                            <div className="absolute bottom-0 inset-x-0 bg-main/90 backdrop-blur-sm px-6 py-3.5 flex items-center justify-between text-[10px] sm:text-[11px] font-mono tracking-widest text-gray-200 uppercase border-t border-white/10">
-                                {activeService.compliance.map((item, i) => (
-                                    <div key={i} className="flex items-center space-x-2">
-                                        <span>{item}</span>
-                                        {i < activeService.compliance.length - 1 && (
-                                            <span className="w-1 h-1 bg-ambergold hidden sm:inline-block" />
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
                         </div>
                     </motion.div>
                 </AnimatePresence>
