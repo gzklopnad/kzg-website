@@ -14,8 +14,8 @@ const servicesData = [
         key: 'railFreight',
         code: '02 / EURASIAN RAIL FREIGHT',
         compliance: ['ISO 9001:2015', 'CIM/SMGS DOCUMENTED', 'INTERMODAL VERIFIED'],
-        image: 'https://images.unsplash.com/photo-1515165562839-978401074bf4?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Industrial rail freight freight train on tracks'
+        image: 'https://unsplash.com/photos/JQ6knLuGZAA/download?w=1200',
+        alt: 'Train yard filled with lots of different trains'
     },
     {
         key: 'customSolutions',
@@ -35,15 +35,15 @@ const servicesData = [
         key: 'metalSupply',
         code: '05 / METALLURGICAL PRODUCTS',
         compliance: ['ISO 9001:2015', 'EN STANDARDS CERTIFIED', 'JIT DELIVERY VERIFIED'],
-        image: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Industrial metal tubes and structural steel warehouse'
+        image: 'https://unsplash.com/photos/ENiGFCmBYj4/download?w=1200',
+        alt: 'Black and yellow metal tank'
     },
     {
         key: 'slagSupply',
         code: '06 / INDUSTRIAL BYPRODUCTS',
         compliance: ['ISO 9001:2015', 'REACH COMPLIANT', 'ECO-CERTIFIED AGGREGATE'],
-        image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Processed slag byproduct and industrial material processing facility'
+        image: 'https://unsplash.com/photos/ZLzkwU49BdY/download?w=1200',
+        alt: 'Large piece of molten metal being poured onto a machine'
     }
 ];
 
