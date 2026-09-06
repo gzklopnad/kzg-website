@@ -202,7 +202,7 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="grid grid-cols-1 lg:grid-cols-2 items-stretch border border-slate-200 rounded-none shadow-sm bg-white min-h-[520px]"
+                        className="group grid grid-cols-1 lg:grid-cols-2 items-stretch border border-slate-200 rounded-none shadow-sm bg-white min-h-[520px]"
                     >
                         {/* Left Column: Calibrated Typography & Structured Data Rows */}
                         <div className="p-10 lg:p-14 flex flex-col justify-between h-full space-y-8 lg:border-r border-slate-200">
@@ -248,14 +248,27 @@ const Services = () => {
                             </div>
                         </div>
 
-                        {/* Right Column: Full-Bleed Media Display */}
-                        <div className="relative min-h-[380px] sm:min-h-[440px] lg:min-h-[520px] w-full h-full overflow-hidden bg-slate-100">
-                            <img
-                                src={activeService.image}
-                                alt={activeService.alt}
-                                className="absolute inset-0 w-full h-full object-cover"
-                                loading="lazy"
-                            />
+                        {/* Right Column: Instant Crossfade Stack of All 6 Preloaded Images */}
+                        <div className="relative min-h-[380px] sm:min-h-[440px] lg:min-h-[520px] w-full h-full overflow-hidden bg-slate-950">
+                            {servicesData.map((service, idx) => {
+                                const isActive = activeIndex === idx;
+                                return (
+                                    <img
+                                        key={service.key}
+                                        src={service.image}
+                                        alt={service.alt}
+                                        loading="eager"
+                                        decoding="async"
+                                        fetchPriority={idx === 0 ? "high" : "auto"}
+                                        className={`absolute inset-0 w-full h-full object-cover filter contrast-[1.08] brightness-[0.92] saturate-[0.95] transition-all duration-500 ease-out group-hover:scale-105 ${
+                                            isActive
+                                                ? 'opacity-100 z-10'
+                                                : 'opacity-0 pointer-events-none z-0'
+                                        }`}
+                                    />
+                                );
+                            })}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none z-20" />
                         </div>
                     </motion.div>
                 </AnimatePresence>
