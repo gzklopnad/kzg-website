@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useForm, ValidationError } from '@formspree/react';
 import { useState, useRef } from "react";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 
 const fadeIn = {
     hidden: { opacity: 0 },
