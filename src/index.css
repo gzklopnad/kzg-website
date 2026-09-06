@@ -17,3 +17,10 @@
     --color-lightestofall: #a7bbff;
     --color-gradient: #1f0f68;
 }
+
+html, body {
+    background-color: #0d1b2a;
+    overscroll-behavior: none;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+}

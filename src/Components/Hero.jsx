@@ -1,210 +1,212 @@
 
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { useEffect, useRef, useState, useCallback } from "react";
+
+const SLIDE_DURATION = 5000; // 5 seconds per slide
+
+const slideKeys = [
+    {
+        id: '01',
+        label: '01 SOURCING',
+        eyebrowEn: 'INDUSTRIAL MATERIALS & SOURCING',
+        eyebrowPl: 'MATERIAŁY PRZEMYSŁOWE I ZAOPATZENIE',
+        textEn: 'Supply and distribution of industrial metals, metallurgical slag, and certified smelting byproducts.',
+        textPl: 'Dostawy i dystrybucja metali przemysłowych, żużla hutniczego oraz certyfikowanych produktów ubocznych.'
+    },
+    {
+        id: '02',
+        label: '02 FREIGHT',
+        eyebrowEn: 'MULTIMODAL LOGISTICS',
+        eyebrowPl: 'LOGISTYKA MULTIMODALNA',
+        textEn: 'Cross-border freight coordination across dedicated rail, sea, and road corridors.',
+        textPl: 'Koordynacja przewozów transgranicznych w dedykowanych korytarzach kolejowych, morskich i drogowych.'
+    },
+    {
+        id: '03',
+        label: '03 ADVISORY',
+        eyebrowEn: 'TRADE CONSULTING & COMPLIANCE',
+        eyebrowPl: 'DORADZTWO HANDLOWE I ZGODNOŚĆ',
+        textEn: 'Risk assessment, customs procedures, and strategic routing for complex cargo flows.',
+        textPl: 'Ocena ryzyka, procedury celne i strategiczne planowanie tras dla skomplikowanych łańcuchów dostaw.'
+    }
+];
 
 const Hero = ({ skipSteps, setSkipSteps }) => {
-    const sectionRef = useRef(null);
     const videoRef = useRef(null);
-    const { t } = useTranslation();
+    const { i18n } = useTranslation();
+    const isPl = (i18n.language || 'en').startsWith('pl');
 
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start start", "end end"],
-    });
-
-    const [step, setStep] = useState(0);
-    const [hasReachedEnd, setHasReachedEnd] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [progress, setProgress] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const [isReducedMotion, setIsReducedMotion] = useState(false);
     const [shouldPlayVideo, setShouldPlayVideo] = useState(true);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
+    // Reduced motion & save data check
     useEffect(() => {
-        const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        setIsReducedMotion(mediaQuery.matches);
         const isSaveData = navigator.connection && navigator.connection.saveData;
-        if (isReducedMotion || isSaveData) {
+        if (mediaQuery.matches || isSaveData) {
             setShouldPlayVideo(false);
         }
+        const handler = (e) => setIsReducedMotion(e.matches);
+        mediaQuery.addEventListener('change', handler);
+        return () => mediaQuery.removeEventListener('change', handler);
     }, []);
 
+    // Handle skipSteps from Navbar link clicks
     useEffect(() => {
         if (skipSteps) {
-            setStep(4);
-            setHasReachedEnd(true);
+            setCurrentIndex(2);
+            setProgress(0);
             setSkipSteps(false);
         }
     }, [skipSteps, setSkipSteps]);
 
-    // Fast, concise scroll behavior: once final step is revealed, it stays pinned during reverse scroll
-    useMotionValueEvent(scrollYProgress, "change", (v) => {
-        if (skipSteps) return;
+    // Silent Timer & Progress Animation Loop
+    useEffect(() => {
+        if (isReducedMotion || isPaused) return;
 
-        // Reset step progression only if user scrolls back to the very top
-        if (v < 0.05) {
-            setHasReachedEnd(false);
-            setStep(0);
-            return;
+        const interval = 50; // update every 50ms
+        const stepAmount = (interval / SLIDE_DURATION) * 100;
+
+        const timer = setInterval(() => {
+            setProgress((prev) => {
+                const nextProgress = prev + stepAmount;
+                if (nextProgress >= 100) {
+                    return 100;
+                }
+                return nextProgress;
+            });
+        }, interval);
+
+        return () => clearInterval(timer);
+    }, [currentIndex, isPaused, isReducedMotion]);
+
+    // Handle slide transition cleanly when progress reaches 100% (Continuous Infinite Loop)
+    useEffect(() => {
+        if (progress >= 100) {
+            setCurrentIndex((prev) => (prev + 1) % slideKeys.length);
+            setProgress(0);
         }
+    }, [progress]);
 
-        // Keep final 3 points ("We supply. We consult. We deliver.") visible when scrolling back up
-        if (hasReachedEnd) {
-            if (step !== 4) setStep(4);
-            return;
-        }
+    const handleScrubberClick = useCallback((idx) => {
+        setCurrentIndex(idx);
+        setProgress(0);
+    }, []);
 
-        // Progression on initial scroll down
-        let nextStep = 0;
-        if (v >= 0.8) {
-            nextStep = 4;
-            setHasReachedEnd(true);
-        } else if (v >= 0.6) {
-            nextStep = 3;
-        } else if (v >= 0.4) {
-            nextStep = 2;
-        } else if (v >= 0.2) {
-            nextStep = 1;
-        } else {
-            nextStep = 0;
-        }
-
-        setStep((prev) => (prev !== nextStep ? nextStep : prev));
-    });
-
-    const textVariants = {
-        hidden: { opacity: 0, y: 15 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-        exit: { opacity: 0, y: -15, transition: { duration: 0.3, ease: "easeIn" } },
-    };
-
-    const titleText = t('hero.title');
-    const titleWords = titleText.split(" ");
-
-    const titleContainerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.28,
-                delayChildren: 0.3,
-            },
-        },
-    };
-
-    const wordVariants = {
-        hidden: {
-            opacity: 0,
-            y: 12,
-            filter: "blur(16px)",
-            scale: 0.95,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-            scale: 1,
-            transition: {
-                duration: 1.4,
-                ease: [0.16, 1, 0.3, 1],
-            },
-        },
-    };
+    const activeSlide = slideKeys[currentIndex];
 
     return (
-        <section ref={sectionRef} className="relative w-full h-[280vh]">
-            {/* Sticky hero viewport */}
-            <div className="sticky top-0 h-screen overflow-hidden">
+        <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black">
 
-                {/* Optimized background video with WebM/MP4 codecs and poster fallback */}
-                <video
-                    ref={videoRef}
-                    autoPlay={shouldPlayVideo}
-                    loop
-                    muted
-                    playsInline
-                    poster="/videos/kzg_vid_poster.webp"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+            {/* Black Fade-In Overlay */}
+            <motion.div
+                initial={{ opacity: 1 }}
+                animate={{ opacity: isVideoLoaded ? 0 : 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="absolute inset-0 bg-black z-1 pointer-events-none"
+            />
+
+            {/* Background Video */}
+            <video
+                ref={videoRef}
+                autoPlay={shouldPlayVideo}
+                loop
+                muted
+                playsInline
+                onLoadedData={() => setIsVideoLoaded(true)}
+                onPlaying={() => setIsVideoLoaded(true)}
+                poster="/videos/kzg_vid_poster.webp"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    isVideoLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+            >
+                <source src="/videos/kzg_vid.webm" type="video/webm" />
+                <source src="/videos/kzg_vid.mp4" type="video/mp4" />
+            </video>
+
+            {/* Directional Vignette Gradient Overlay — keeps video 100% visible */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20 z-[2] pointer-events-none" />
+
+            {/* Main Interactive Viewport Container */}
+            <div className="relative z-10 max-w-7xl mx-auto h-full px-8 lg:px-16 pointer-events-none">
+                {/* Left-Aligned B2B Editorial Text Container */}
+                <div
+                    className="absolute bottom-36 sm:bottom-44 left-8 lg:left-16 max-w-2xl w-fit text-left pointer-events-auto cursor-default"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    onTouchStart={() => setIsPaused(true)}
+                    onTouchEnd={() => setIsPaused(false)}
                 >
-                    <source src="/videos/kzg_vid.webm" type="video/webm" />
-                    <source src="/videos/kzg_vid.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-black/70 z-0" />
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeSlide.id}
+                            initial={{ opacity: 0, y: 12, filter: "blur(6px)" }}
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            exit={{ opacity: 0, y: -10, filter: "blur(6px)" }}
+                            transition={{ duration: 0.45, ease: "easeOut" }}
+                            className="space-y-3"
+                        >
+                            {/* Eyebrow */}
+                            <div className="text-xs font-headers font-bold tracking-[0.2em] text-slate-300 uppercase flex items-center space-x-2">
+                                <span className="w-2 h-[2px] bg-ambergold inline-block" />
+                                <span>{isPl ? activeSlide.eyebrowPl : activeSlide.eyebrowEn}</span>
+                            </div>
 
-                {/* Foreground content container */}
-                <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+                            {/* Main B2B Operational Statement */}
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-headers font-bold tracking-tight text-white leading-snug drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)]">
+                                {isPl ? activeSlide.textPl : activeSlide.textEn}
+                            </h2>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
 
-                    {/* Primary H1 heading with slow prestige solid-white optical reveal */}
-                    <motion.h1
-                        variants={titleContainerVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="text-4xl md:text-5xl lg:text-6xl font-headers font-extrabold tracking-[0.2em] uppercase mb-15 flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-white drop-shadow-[0_12px_24px_rgba(0,0,0,0.7)]"
-                    >
-                        {titleWords.map((word, idx) => (
-                            <motion.span
-                                key={idx}
-                                variants={wordVariants}
-                                className="inline-block"
-                            >
-                                {word}
-                            </motion.span>
-                        ))}
-                    </motion.h1>
+                {/* Scrubber Bar Pinned above taskbar / bottom edge */}
+                <div
+                    className="absolute bottom-16 sm:bottom-20 inset-x-8 lg:inset-x-16 max-w-7xl mx-auto pointer-events-auto"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    onTouchStart={() => setIsPaused(true)}
+                    onTouchEnd={() => setIsPaused(false)}
+                >
+                    <div className="grid grid-cols-3 gap-4 sm:gap-8">
+                        {slideKeys.map((slide, idx) => {
+                            const isActive = currentIndex === idx;
+                            const isCompleted = idx < currentIndex;
+                            const fillPercent = isActive ? progress : isCompleted ? 100 : 0;
 
-                    {/* Step transition container */}
-                    <div className="relative flex items-center justify-center min-h-[160px] w-full max-w-4xl">
-                        <AnimatePresence mode="wait">
-                            {step === 1 && (
-                                <motion.p
-                                    key="step1"
-                                    variants={textVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    exit="exit"
-                                    className="absolute max-w-xl font-regular text-2xl p-3 md:text-3xl font-light"
+                            return (
+                                <button
+                                    key={slide.id}
+                                    onClick={() => handleScrubberClick(idx)}
+                                    className="flex flex-col space-y-2 group cursor-pointer text-left outline-none"
+                                    aria-label={`Jump to ${slide.label}`}
                                 >
-                                    {t('hero.step1')}
-                                </motion.p>
-                            )}
+                                    {/* Top Line: 2px progress track */}
+                                    <div className="h-[2px] w-full bg-white/20 overflow-hidden relative rounded-full">
+                                        <div
+                                            className="h-full bg-white transition-all"
+                                            style={{
+                                                width: `${fillPercent}%`,
+                                                transitionDuration: isReducedMotion || fillPercent === 0 ? '0ms' : '50ms'
+                                            }}
+                                        />
+                                    </div>
 
-                            {step === 2 && (
-                                <motion.p
-                                    key="step2"
-                                    variants={textVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    exit="exit"
-                                    className="absolute max-w-xl font-regular text-2xl p-3 md:text-3xl font-light"
-                                >
-                                    {t('hero.step2')}
-                                </motion.p>
-                            )}
-
-                            {step === 3 && (
-                                <motion.p
-                                    key="step3"
-                                    variants={textVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    exit="exit"
-                                    className="absolute max-w-xl font-regular text-2xl p-3 md:text-3xl font-light"
-                                >
-                                    {t('hero.step3')}
-                                </motion.p>
-                            )}
-
-                            {step === 4 && (
-                                <motion.div
-                                    key="step4"
-                                    variants={textVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    exit="exit"
-                                    className="absolute flex flex-col gap-3 font-regular p-3 font-semibold bg-gradient-to-r from-lightestofall from-0% to-lightsecond to-100% bg-clip-text text-transparent text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
-                                >
-                                    <p>{t('hero.final1')}</p>
-                                    <p>{t('hero.final2')}</p>
-                                    <p>{t('hero.final3')}</p>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                                    {/* Bottom Line: Compact Label */}
+                                    <div className="text-[11px] font-headers font-bold uppercase tracking-wider transition-colors text-left pt-1">
+                                        <span className={isActive ? "text-white font-bold" : "text-slate-400 group-hover:text-white"}>
+                                            {slide.label}
+                                        </span>
+                                    </div>
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
