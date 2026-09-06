@@ -27,18 +27,18 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="w-full bg-main text-white border-t border-white/10 py-16 lg:py-24">
+        <section id="contact" className="w-full bg-main text-white border-t border-white/10 py-8 sm:py-16 lg:py-24">
             <motion.div
                 ref={containerRef}
                 initial={{ opacity: 0, y: 16 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12"
+                className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-12"
             >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start">
 
                     {/* Left Column: Operations & Routing Desk (5 cols) */}
-                    <div className="lg:col-span-5 space-y-8">
+                    <div className="lg:col-span-5 space-y-6 sm:space-y-8">
                         <div className="space-y-4">
                             <div className="text-xs font-headers font-bold uppercase tracking-wider text-slate-300">
                                 {isPl ? 'OPERACJE I DYSPOZYCJA' : 'OPERATIONS & DISPATCH'}
@@ -91,12 +91,12 @@ const Contact = () => {
                     </div>
 
                     {/* Right Column: Clean B2B Contact Form (7 cols) */}
-                    <div className="lg:col-span-7 bg-lighter-main/40 border border-white/10 p-8 sm:p-10 lg:p-12 shadow-xl">
+                    <div className="lg:col-span-7 bg-lighter-main/40 border border-white/10 p-5 sm:p-10 lg:p-12 shadow-xl">
                         {!state.succeeded ? (
-                            <form onSubmit={customSubmit} className="space-y-5">
+                            <form onSubmit={customSubmit} className="space-y-4 sm:space-y-5">
 
                                 {/* Form Fields Grid */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                                     <div className="space-y-1.5">
                                         <label htmlFor="name" className="block text-xs font-headers uppercase tracking-wider text-slate-300 font-bold">
                                             {isPl ? 'Imię i Nazwisko *' : 'Full Name *'}
@@ -107,7 +107,7 @@ const Contact = () => {
                                             type="text"
                                             required
                                             placeholder={isPl ? "Twoje imię" : "Your name"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-4 py-3 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
                                         />
                                         <ValidationError prefix="Name" field="name" errors={state.errors} />
                                     </div>
@@ -122,7 +122,7 @@ const Contact = () => {
                                             name="email"
                                             required
                                             placeholder={isPl ? "Twój e-mail" : "Your email"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-4 py-3 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
                                         />
                                         <ValidationError prefix="Email" field="email" errors={state.errors} />
                                     </div>
@@ -137,7 +137,7 @@ const Contact = () => {
                                             name="company"
                                             required
                                             placeholder={isPl ? "Nazwa firmy" : "Company name"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-4 py-3 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
                                         />
                                     </div>
 
@@ -150,7 +150,7 @@ const Contact = () => {
                                             type="tel"
                                             name="phone"
                                             placeholder={isPl ? "Numer telefonu" : "Phone number"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-4 py-3 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
                                         />
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@ const Contact = () => {
                                         rows={4}
                                         required
                                         placeholder={isPl ? "Twoja wiadomość..." : "Your message..."}
-                                        className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-4 py-3 text-sm focus:border-ambergold focus:outline-none transition-colors resize-none font-regular"
+                                        className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors resize-none font-regular"
                                     />
                                     <ValidationError prefix="Message" field="message" errors={state.errors} />
                                 </div>
@@ -183,7 +183,7 @@ const Contact = () => {
                                     <button
                                         type="submit"
                                         disabled={state.submitting || !captchaToken}
-                                        className="w-full sm:w-auto px-8 py-3.5 bg-ambergold text-main font-headers font-bold text-xs uppercase tracking-wider hover:bg-gold transition-colors duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
+                                        className="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-950 font-headers font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                                     >
                                         {isPl ? 'Wyślij wiadomość' : 'Send Message'}
                                     </button>

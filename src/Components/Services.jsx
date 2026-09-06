@@ -168,12 +168,12 @@ const Services = () => {
     const buttonText = isPl ? activeService.buttonPl : activeService.buttonEn;
 
     return (
-        <section id="services" className="bg-white text-main py-16 lg:py-24 border-t border-gray-200">
-            <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-8">
+        <section id="services" className="bg-white text-main py-12 sm:py-16 lg:py-24 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
 
-                {/* Structured Clean Tab Bar */}
-                <div className="border-b border-gray-200">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                {/* Single-Line Horizontal Scrollable Tabs on Mobile (< lg), Grid on Desktop (lg:) */}
+                <div className="border-b border-gray-200 pb-2 lg:pb-0">
+                    <div className="flex overflow-x-auto scroll-smooth whitespace-nowrap gap-2 pr-6 lg:pr-0 no-scrollbar lg:grid lg:grid-cols-6 lg:gap-2 lg:overflow-visible">
                         {servicesData.map((service, idx) => {
                             const label = isPl ? service.labelPl : service.labelEn;
                             const isSelected = activeIndex === idx;
@@ -181,7 +181,7 @@ const Services = () => {
                                 <button
                                     key={service.key}
                                     onClick={() => setActiveIndex(idx)}
-                                    className={`py-3.5 px-3 text-xs sm:text-sm font-headers uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer text-center border-b-2 rounded-none ${
+                                    className={`px-3.5 py-2.5 text-xs sm:text-sm font-headers uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer text-center border-b-2 rounded-none shrink-0 ${
                                         isSelected
                                             ? 'text-main border-main bg-gray-50/80 font-bold'
                                             : 'text-gray-500 hover:text-gray-900 border-transparent hover:bg-gray-50/40'
@@ -194,7 +194,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                {/* 50/50 Split Container with Crisp Architectural Framing */}
+                {/* Split Container: Stacked on Mobile, 50/50 Side-by-Side on Desktop */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeService.key}
@@ -202,33 +202,45 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
-                        className="group grid grid-cols-1 lg:grid-cols-2 items-stretch border border-slate-200 rounded-none shadow-sm bg-white min-h-[520px]"
+                        className="group grid grid-cols-1 lg:grid-cols-2 items-stretch border border-slate-200 rounded-none shadow-sm bg-white min-h-[480px]"
                     >
-                        {/* Left Column: Calibrated Typography & Structured Data Rows */}
-                        <div className="p-10 lg:p-14 flex flex-col justify-between h-full space-y-8 lg:border-r border-slate-200">
+                        {/* Content Column */}
+                        <div className="p-6 sm:p-10 lg:p-14 flex flex-col justify-between h-full space-y-6 lg:space-y-8 lg:border-r border-slate-200">
                             <div>
-                                <div className="text-[11px] font-headers font-bold uppercase tracking-widest text-slate-400 mb-2">
+                                <div className="text-[11px] font-headers font-bold uppercase tracking-widest text-slate-400 mb-1.5 sm:mb-2">
                                     {eyebrow}
                                 </div>
-                                <h3 className="text-3xl sm:text-4xl font-headers font-extrabold tracking-[-0.03em] text-slate-950 leading-[1.12] mb-4">
+                                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-headers font-extrabold tracking-[-0.03em] text-slate-950 leading-[1.12] mb-3 sm:mb-4">
                                     {title}
                                 </h3>
-                                <p className="text-base font-regular text-slate-600 leading-relaxed max-w-lg mb-6">
+
+                                {/* Responsive Image Positioned Below Title on Mobile (< lg) */}
+                                <div className="lg:hidden relative w-full h-48 sm:h-64 overflow-hidden bg-slate-950 my-4 rounded-none border border-slate-200">
+                                    <img
+                                        src={activeService.image}
+                                        alt={activeService.alt}
+                                        className="absolute inset-0 w-full h-full object-cover filter contrast-[1.08] brightness-[0.92] saturate-[0.95]"
+                                        loading="lazy"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                                </div>
+
+                                <p className="text-sm sm:text-base font-regular text-slate-600 leading-relaxed max-w-lg mb-6">
                                     {subtitle}
                                 </p>
 
                                 {/* Capability Spec Rows */}
                                 <div className="border-t border-slate-200 divide-y divide-slate-100 pt-2">
-                                    <div className="text-xs font-headers font-bold uppercase tracking-wider text-slate-900 py-3">
+                                    <div className="text-xs font-headers font-bold uppercase tracking-wider text-slate-900 py-2.5 sm:py-3">
                                         {isPl ? 'ZAKRES USŁUG I SPECYFIKACJA' : 'KEY CAPABILITIES & SPECIFICATIONS'}
                                     </div>
                                     {specs.map((item, idx) => (
-                                        <div key={idx} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                        <div key={idx} className="py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                                             <span className="text-xs font-headers font-bold uppercase tracking-wider text-slate-900">
                                                 {item.bold}
                                             </span>
                                             {item.desc && (
-                                                <span className="text-sm font-regular text-slate-600">
+                                                <span className="text-xs sm:text-sm font-regular text-slate-600">
                                                     {item.desc}
                                                 </span>
                                             )}
@@ -237,19 +249,19 @@ const Services = () => {
                                 </div>
                             </div>
 
-                            {/* Grounded Primary CTA Button */}
+                            {/* CTA Action Button */}
                             <div className="pt-4">
                                 <a
                                     href="#contact"
-                                    className="inline-flex items-center justify-center px-6 py-3.5 bg-slate-950 hover:bg-slate-800 text-white font-headers font-semibold text-xs uppercase tracking-wider transition-all duration-200 rounded-none shadow-sm cursor-pointer"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-slate-950 hover:bg-slate-800 text-white font-headers font-semibold text-xs uppercase tracking-wider transition-all duration-200 rounded-none shadow-sm cursor-pointer"
                                 >
                                     {buttonText}
                                 </a>
                             </div>
                         </div>
 
-                        {/* Right Column: Instant Crossfade Stack of All 6 Preloaded Images */}
-                        <div className="relative min-h-[380px] sm:min-h-[440px] lg:min-h-[520px] w-full h-full overflow-hidden bg-slate-950">
+                        {/* Desktop Image Display (Hidden on Mobile, Visible on Desktop) */}
+                        <div className="hidden lg:block relative min-h-[520px] w-full h-full overflow-hidden bg-slate-950">
                             {servicesData.map((service, idx) => {
                                 const isActive = activeIndex === idx;
                                 return (
