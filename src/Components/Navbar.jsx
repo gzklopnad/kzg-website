@@ -43,45 +43,46 @@ const Navbar = ({ onNavClick }) => {
                     <PageIcon className="w-16 sm:w-24 lg:w-28" />
                 </div>
 
-                {/* Desktop Nav Links (Hidden on Mobile) */}
-                <div className="hidden md:flex space-x-5 sm:space-x-7 lg:space-x-9 items-center">
-                    <Link
-                        to="about"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        className="font-headers uppercase tracking-wider text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] hover:text-ambergold transition-colors duration-300 cursor-pointer relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-ambergold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
-                    >
-                        {t("navbar.about")}
-                    </Link>
+                {/* Right Area: Desktop Nav Links + Language Switcher + Mobile Toggle */}
+                <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
 
-                    <Link
-                        to="services"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        onClick={() => onNavClick()}
-                        className="font-headers uppercase tracking-wider text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] hover:text-ambergold transition-colors duration-300 cursor-pointer relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-ambergold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
-                    >
-                        {t("navbar.services")}
-                    </Link>
+                    {/* Desktop Nav Links (Right-Aligned, Hidden on Mobile) */}
+                    <div className="hidden md:flex space-x-5 sm:space-x-7 lg:space-x-9 items-center">
+                        <Link
+                            to="about"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            className="font-headers uppercase tracking-wider text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] hover:text-ambergold transition-colors duration-300 cursor-pointer relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-ambergold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+                        >
+                            {t("navbar.about")}
+                        </Link>
 
-                    <Link
-                        to="contact"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        onClick={() => onNavClick()}
-                        className="font-headers uppercase tracking-wider text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] hover:text-ambergold transition-colors duration-300 cursor-pointer relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-ambergold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
-                    >
-                        {t("navbar.contact")}
-                    </Link>
-                </div>
+                        <Link
+                            to="services"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            onClick={() => onNavClick()}
+                            className="font-headers uppercase tracking-wider text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] hover:text-ambergold transition-colors duration-300 cursor-pointer relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-ambergold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+                        >
+                            {t("navbar.services")}
+                        </Link>
 
-                {/* Right Area: Language Switcher + Mobile Toggle */}
-                <div className="flex items-center gap-3">
+                        <Link
+                            to="contact"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            onClick={() => onNavClick()}
+                            className="font-headers uppercase tracking-wider text-xs sm:text-sm md:text-base font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] hover:text-ambergold transition-colors duration-300 cursor-pointer relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-ambergold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+                        >
+                            {t("navbar.contact")}
+                        </Link>
+                    </div>
+
                     {/* Globe + GB / PL Language Switcher */}
-                    <div className="flex items-center space-x-1.5 pl-2 sm:pl-4 border-l md:border-l border-white/20">
+                    <div className="flex items-center space-x-1.5 pl-2 sm:pl-4 border-l border-white/20">
                         <Globe className="w-4 h-4 text-gray-200 mr-1 inline-block drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]" />
                         <button
                             onClick={() => changeLanguage("en")}

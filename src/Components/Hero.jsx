@@ -126,8 +126,7 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
                     isVideoLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
             >
-                <source src="/videos/kzg_vid.webm" type="video/webm" />
-                <source src="/videos/kzg_vid.mp4" type="video/mp4" />
+                <source src="/videos/hero-final.mp4" type="video/mp4" />
             </video>
 
             {/* Directional Vignette Gradient Overlay — keeps video 100% visible */}

@@ -1,0 +1,3 @@
+LOGO FONT: Genos
+WEBSITE FONTS: Montseratt, Poppins
+Color pallete: 
