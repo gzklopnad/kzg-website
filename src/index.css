@@ -18,12 +18,12 @@
     --color-gradient: #1f0f68;
 }
 
-html, body {
+html {
     background-color: #0d1b2a;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
     overscroll-behavior: none;
-    overscroll-behavior-x: none;
-    overscroll-behavior-y: none;
+}
+
+body {
+    background-color: #0d1b2a;
+    overflow-x: clip;
 }
