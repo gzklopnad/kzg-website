@@ -105,7 +105,7 @@ const Contact = () => {
                                             type="text"
                                             required
                                             placeholder={isPl ? "Twoje imię" : "Your name"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 min-h-[44px] text-base sm:text-sm focus:border-ambergold focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none transition-colors font-regular"
                                         />
                                         <ValidationError prefix="Name" field="name" errors={state.errors} />
                                     </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                                             name="email"
                                             required
                                             placeholder={isPl ? "Twój e-mail" : "Your email"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 min-h-[44px] text-base sm:text-sm focus:border-ambergold focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none transition-colors font-regular"
                                         />
                                         <ValidationError prefix="Email" field="email" errors={state.errors} />
                                     </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                                             name="company"
                                             required
                                             placeholder={isPl ? "Nazwa firmy" : "Company name"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 min-h-[44px] text-base sm:text-sm focus:border-ambergold focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none transition-colors font-regular"
                                         />
                                     </div>
 
@@ -148,7 +148,7 @@ const Contact = () => {
                                             type="tel"
                                             name="phone"
                                             placeholder={isPl ? "Numer telefonu" : "Phone number"}
-                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors font-regular"
+                                            className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 min-h-[44px] text-base sm:text-sm focus:border-ambergold focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none transition-colors font-regular"
                                         />
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@ const Contact = () => {
                                         rows={4}
                                         required
                                         placeholder={isPl ? "Twoja wiadomość..." : "Your message..."}
-                                        className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-sm focus:border-ambergold focus:outline-none transition-colors resize-none font-regular"
+                                        className="w-full bg-main/80 border border-white/20 text-white placeholder-slate-400 px-3 py-2.5 text-base sm:text-sm focus:border-ambergold focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none transition-colors resize-none font-regular"
                                     />
                                     <ValidationError prefix="Message" field="message" errors={state.errors} />
                                 </div>
@@ -181,7 +181,7 @@ const Contact = () => {
                                     <button
                                         type="submit"
                                         disabled={state.submitting || !captchaToken}
-                                        className="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-950 font-headers font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+                                        className="w-full sm:w-auto px-8 py-3.5 min-h-[44px] inline-flex items-center justify-center bg-white text-slate-950 font-headers font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                                     >
                                         {isPl ? 'Wyślij wiadomość' : 'Send Message'}
                                     </button>

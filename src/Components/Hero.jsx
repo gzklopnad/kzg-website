@@ -102,7 +102,7 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
     const activeSlide = slideKeys[currentIndex];
 
     return (
-        <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black">
+        <section className="relative w-full h-[100dvh] min-h-[640px] overflow-hidden bg-black">
 
             {/* Black Fade-In Overlay */}
             <motion.div
@@ -183,7 +183,7 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
                                 <button
                                     key={slide.id}
                                     onClick={() => handleScrubberClick(idx)}
-                                    className="flex flex-col space-y-2 group cursor-pointer text-left outline-none"
+                                    className="flex flex-col justify-center space-y-2 group cursor-pointer text-left min-h-[44px] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-sm"
                                     aria-label={`Jump to ${slide.label}`}
                                 >
                                     {/* Top Line: 2px progress track */}

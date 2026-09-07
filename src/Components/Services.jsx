@@ -173,15 +173,19 @@ const Services = () => {
 
                 {/* Single-Line Horizontal Scrollable Tabs on Mobile (< lg), Grid on Desktop (lg:) */}
                 <div className="border-b border-gray-200 pb-2 lg:pb-0">
-                    <div className="flex overflow-x-auto scroll-smooth whitespace-nowrap gap-2 pr-6 lg:pr-0 no-scrollbar lg:grid lg:grid-cols-6 lg:gap-2 lg:overflow-visible">
+                    <div role="tablist" aria-label="Services Navigation" className="flex overflow-x-auto scroll-smooth whitespace-nowrap gap-2 pr-6 lg:pr-0 no-scrollbar lg:grid lg:grid-cols-6 lg:gap-2 lg:overflow-visible">
                         {servicesData.map((service, idx) => {
                             const label = isPl ? service.labelPl : service.labelEn;
                             const isSelected = activeIndex === idx;
                             return (
                                 <button
                                     key={service.key}
+                                    id={`service-tab-${service.key}`}
+                                    role="tab"
+                                    aria-selected={isSelected}
+                                    aria-controls={`service-panel-${service.key}`}
                                     onClick={() => setActiveIndex(idx)}
-                                    className={`px-3.5 py-2.5 text-xs sm:text-sm font-headers uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer text-center border-b-2 rounded-none shrink-0 ${
+                                    className={`px-3.5 py-2.5 min-h-[44px] inline-flex items-center justify-center text-xs sm:text-sm font-headers uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer text-center border-b-2 rounded-none shrink-0 focus-visible:ring-2 focus-visible:ring-main focus-visible:outline-none ${
                                         isSelected
                                             ? 'text-main border-main bg-gray-50/80 font-bold'
                                             : 'text-gray-500 hover:text-gray-900 border-transparent hover:bg-gray-50/40'
@@ -198,6 +202,9 @@ const Services = () => {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeService.key}
+                        id={`service-panel-${activeService.key}`}
+                        role="tabpanel"
+                        aria-labelledby={`service-tab-${activeService.key}`}
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
@@ -207,7 +214,7 @@ const Services = () => {
                         {/* Content Column */}
                         <div className="p-6 sm:p-10 lg:p-14 flex flex-col justify-between h-full space-y-6 lg:space-y-8 lg:border-r border-slate-200">
                             <div>
-                                <div className="text-[11px] font-headers font-bold uppercase tracking-widest text-slate-400 mb-1.5 sm:mb-2">
+                                <div className="text-[11px] font-headers font-bold uppercase tracking-widest text-slate-600 mb-1.5 sm:mb-2">
                                     {eyebrow}
                                 </div>
                                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-headers font-extrabold tracking-[-0.03em] text-slate-950 leading-[1.12] mb-3 sm:mb-4">
@@ -253,7 +260,7 @@ const Services = () => {
                             <div className="pt-4">
                                 <a
                                     href="#contact"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-slate-950 hover:bg-slate-800 text-white font-headers font-semibold text-xs uppercase tracking-wider transition-all duration-200 rounded-none shadow-sm cursor-pointer"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 min-h-[44px] bg-slate-950 hover:bg-slate-800 text-white font-headers font-semibold text-xs uppercase tracking-wider transition-all duration-200 rounded-none shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:outline-none"
                                 >
                                     {buttonText}
                                 </a>

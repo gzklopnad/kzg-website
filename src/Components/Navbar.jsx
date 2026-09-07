@@ -50,6 +50,7 @@ const Navbar = ({ onNavClick }) => {
                     <div className="hidden md:flex space-x-5 sm:space-x-7 lg:space-x-9 items-center">
                         <Link
                             to="about"
+                            href="#about"
                             spy={true}
                             smooth={true}
                             duration={500}
@@ -60,6 +61,7 @@ const Navbar = ({ onNavClick }) => {
 
                         <Link
                             to="services"
+                            href="#services"
                             spy={true}
                             smooth={true}
                             duration={500}
@@ -71,6 +73,7 @@ const Navbar = ({ onNavClick }) => {
 
                         <Link
                             to="contact"
+                            href="#contact"
                             spy={true}
                             smooth={true}
                             duration={500}
@@ -86,8 +89,8 @@ const Navbar = ({ onNavClick }) => {
                         <Globe className="w-4 h-4 text-gray-200 mr-1 inline-block drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]" />
                         <button
                             onClick={() => changeLanguage("en")}
-                            aria-label="Switch language to English"
-                            className={`px-2 py-0.5 text-xs font-headers uppercase font-bold rounded-full transition-all duration-300 cursor-pointer ${
+                            aria-label="GB"
+                            className={`px-2.5 py-1 min-h-[44px] inline-flex items-center justify-center text-xs font-headers uppercase font-bold rounded-full transition-all duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none ${
                                 currentLang === 'en'
                                     ? 'text-ambergold bg-white/20 border border-ambergold shadow-sm'
                                     : 'text-gray-200 hover:text-white'
@@ -97,8 +100,8 @@ const Navbar = ({ onNavClick }) => {
                         </button>
                         <button
                             onClick={() => changeLanguage("pl")}
-                            aria-label="Switch language to Polish"
-                            className={`px-2 py-0.5 text-xs font-headers uppercase font-bold rounded-full transition-all duration-300 cursor-pointer ${
+                            aria-label="PL"
+                            className={`px-2.5 py-1 min-h-[44px] inline-flex items-center justify-center text-xs font-headers uppercase font-bold rounded-full transition-all duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none ${
                                 currentLang === 'pl'
                                     ? 'text-ambergold bg-white/20 border border-ambergold shadow-sm'
                                     : 'text-gray-200 hover:text-white'
@@ -112,7 +115,7 @@ const Navbar = ({ onNavClick }) => {
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         aria-label="Toggle Navigation Menu"
-                        className="md:hidden text-white p-1 focus:outline-none cursor-pointer"
+                        className="md:hidden text-white p-2 min-h-[44px] min-w-[44px] inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-ambergold focus-visible:outline-none cursor-pointer"
                     >
                         {mobileMenuOpen ? <X className="w-6 h-6 text-ambergold" /> : <Menu className="w-6 h-6" />}
                     </button>
@@ -124,6 +127,7 @@ const Navbar = ({ onNavClick }) => {
                 <div className="md:hidden bg-main/95 border-t border-white/10 px-6 py-6 space-y-4 shadow-2xl">
                     <Link
                         to="about"
+                        href="#about"
                         spy={true}
                         smooth={true}
                         duration={500}
@@ -135,6 +139,7 @@ const Navbar = ({ onNavClick }) => {
 
                     <Link
                         to="services"
+                        href="#services"
                         spy={true}
                         smooth={true}
                         duration={500}
@@ -149,6 +154,7 @@ const Navbar = ({ onNavClick }) => {
 
                     <Link
                         to="contact"
+                        href="#contact"
                         spy={true}
                         smooth={true}
                         duration={500}
