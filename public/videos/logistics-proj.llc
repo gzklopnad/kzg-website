@@ -1,0 +1,40 @@
+{
+  version: 2,
+  mediaFileName: 'logistics.mp4',
+  cutSegments: [
+    {
+      start: 42.03802848214286,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 0,
+      end: 8.140697579081634,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 11.276867957908165,
+      end: 15.947760011479593,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 38.76840404464286,
+      end: 42.17148254081633,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 45.374379948979595,
+      end: 48.91091250382653,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 44.70710965561224,
+      name: '',
+      selected: true,
+    },
+  ],
+}
