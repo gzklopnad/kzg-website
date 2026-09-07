@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kzg.net.pl/sitemap.xml

@@ -66,7 +66,7 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
         }
     }, [skipSteps, setSkipSteps]);
 
-    // Silent Timer & Progress Animation Loop
+    // Timer & Progress Animation Loop (50ms interval)
     useEffect(() => {
         if (isReducedMotion || isPaused) return;
 
@@ -86,7 +86,7 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
         return () => clearInterval(timer);
     }, [currentIndex, isPaused, isReducedMotion]);
 
-    // Handle slide transition cleanly when progress reaches 100% (Continuous Infinite Loop)
+    // Advance slide cleanly when progress reaches 100% (Continuous Infinite Loop)
     useEffect(() => {
         if (progress >= 100) {
             setCurrentIndex((prev) => (prev + 1) % slideKeys.length);
@@ -119,6 +119,7 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 onLoadedData={() => setIsVideoLoaded(true)}
                 onPlaying={() => setIsVideoLoaded(true)}
                 poster="/videos/kzg_vid_poster.webp"
@@ -145,10 +146,10 @@ const Hero = ({ skipSteps, setSkipSteps }) => {
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeSlide.id}
-                            initial={{ opacity: 0, y: 12, filter: "blur(6px)" }}
-                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            exit={{ opacity: 0, y: -10, filter: "blur(6px)" }}
-                            transition={{ duration: 0.45, ease: "easeOut" }}
+                            initial={{ opacity: 0, y: 4 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -4 }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
                             className="space-y-3"
                         >
                             {/* Eyebrow */}

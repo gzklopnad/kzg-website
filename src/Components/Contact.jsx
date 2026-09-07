@@ -40,9 +40,6 @@ const Contact = () => {
                     {/* Left Column: Operations & Routing Desk (5 cols) */}
                     <div className="lg:col-span-5 space-y-6 sm:space-y-8">
                         <div className="space-y-4">
-                            <div className="text-xs font-headers font-bold uppercase tracking-wider text-slate-300">
-                                {isPl ? 'OPERACJE I DYSPOZYCJA' : 'OPERATIONS & DISPATCH'}
-                            </div>
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-headers font-bold tracking-tight text-white leading-tight">
                                 {isPl ? 'Zapytania Bezpośrednie i Wyceny' : 'Direct Inquiries & Rate Quotes'}
                             </h2>
@@ -171,12 +168,14 @@ const Contact = () => {
 
                                 {/* Captcha & Action Button */}
                                 <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                                    <HCaptcha
-                                        sitekey="b15ae194-734c-410a-8572-68ac81d6c70a"
-                                        onVerify={onCaptchaVerify}
-                                        onExpire={onCaptchaExpire}
-                                        ref={captchaRef}
-                                    />
+                                    {isInView && (
+                                        <HCaptcha
+                                            sitekey="b15ae194-734c-410a-8572-68ac81d6c70a"
+                                            onVerify={onCaptchaVerify}
+                                            onExpire={onCaptchaExpire}
+                                            ref={captchaRef}
+                                        />
+                                    )}
 
                                     <button
                                         type="submit"

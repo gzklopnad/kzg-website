@@ -8,6 +8,17 @@ export default defineConfig({
       tailwindcss(),
       react()
   ],
+  build: {
+      rollupOptions: {
+          output: {
+              manualChunks: {
+                  vendor: ['react', 'react-dom'],
+                  motion: ['motion/react'],
+                  i18n: ['react-i18next', 'i18next']
+              }
+          }
+      }
+  },
   server: {
       allowedHosts: true
   },

@@ -25,12 +25,12 @@ describe('Services Split Section', () => {
     render(<Services />);
     
     // Default active tab: 01 SHIPPING
-    expect(screen.getByText('Global Container & Bulk Shipping')).toBeInTheDocument();
+    expect(screen.getByText('Container & Bulk Ocean Freight')).toBeInTheDocument();
     expect(screen.getByText('Inquire Freight Rates')).toBeInTheDocument();
 
     // Click on tab 02 RAIL
     fireEvent.click(screen.getByText('02 RAIL'));
-    expect(screen.getByText('Cross-Border Rail Freight Coordination')).toBeInTheDocument();
+    expect(screen.getByText('Cross-Border Rail Freight')).toBeInTheDocument();
     expect(screen.getByText('Inquire Rail Routes')).toBeInTheDocument();
 
     // Click on tab 05 METALS

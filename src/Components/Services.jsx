@@ -9,10 +9,10 @@ const servicesData = [
         labelPl: '01 SPEDYCJA',
         eyebrowEn: 'OCEAN & MARITIME FREIGHT',
         eyebrowPl: 'FRACHT MORSKI I OCEANICZNY',
-        titleEn: 'Global Container & Bulk Shipping',
+        titleEn: 'Container & Bulk Ocean Freight',
         titlePl: 'Kontenerowy i Masowy Fracht Morski',
-        subtitleEn: 'Scheduled deep-sea container services and chartered vessel coordination connecting core European ports with international trade corridors.',
-        subtitlePl: 'Regularne przewozy kontenerowe i czartery statków łączące kluczowe porty europejskie z globalnymi korytarzami handlowymi.',
+        subtitleEn: 'We operate scheduled container lines (FCL/LCL) and arrange vessel charters connecting European ports with global markets.',
+        subtitlePl: 'Obsługujemy stałe linie kontenerowe (FCL/LCL) oraz organizujemy czartery statków łączące europejskie porty z rynkami globalnymi.',
         specsEn: [
             { bold: 'Tier-1 Carrier Allocations', desc: 'FCL / LCL' },
             { bold: 'Port Agency & Berthing Oversight', desc: 'Direct Control' },
@@ -25,7 +25,7 @@ const servicesData = [
         ],
         buttonEn: 'Inquire Freight Rates',
         buttonPl: 'Wyceń Fracht Morski',
-        image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80',
+        image: '/photos/services/shipping.webp',
         alt: 'Container cargo ship operating global freight'
     },
     {
@@ -34,10 +34,10 @@ const servicesData = [
         labelPl: '02 KOLEJ',
         eyebrowEn: 'INLAND INTERMODAL TRANSIT',
         eyebrowPl: 'TRANSPORT KOLEJOWY I INTERMODALNY',
-        titleEn: 'Cross-Border Rail Freight Coordination',
+        titleEn: 'Cross-Border Rail Freight',
         titlePl: 'Międzynarodowa Koordynacja Przewozów Kolejowych',
-        subtitleEn: 'Dedicated block train services and wagonload transport linking industrial manufacturing hubs across the European Union and Eurasian corridors.',
-        subtitlePl: 'Dedykowane pociągi całopociągowe i przewozy wagonowe łączące ośrodki przemysłowe UE i korytarze eurazjatyckie.',
+        subtitleEn: 'We organize dedicated block trains and wagonload shipments linking European Union industrial hubs with Eurasian corridors.',
+        subtitlePl: 'Organizujemy składy całopociągowe oraz przesyłki wagonowe łączące węzły przemysłowe Unii Europejskiej z korytarzami euroazjatyckimi.',
         specsEn: [
             { bold: 'Standard & Broad Gauge Transshipment', desc: '1435mm / 1520mm' },
             { bold: 'First/Last-Mile Depot & Siding Handling', desc: 'Terminal Operations' },
@@ -50,7 +50,7 @@ const servicesData = [
         ],
         buttonEn: 'Inquire Rail Routes',
         buttonPl: 'Sprawdź Trasy Kolejowe',
-        image: 'https://unsplash.com/photos/JQ6knLuGZAA/download?w=1200',
+        image: '/photos/services/rail.webp',
         alt: 'Train yard filled with lots of different trains'
     },
     {
@@ -59,10 +59,10 @@ const servicesData = [
         labelPl: '03 PROJEKTY',
         eyebrowEn: 'CONTRACT & PROJECT LOGISTICS',
         eyebrowPl: 'LOGISTYKA KONTRAKTOWA I PROJEKTOWA',
-        titleEn: 'Custom Industrial Routing Solutions',
-        titlePl: 'Dedykowane Inżynieryjne Rozwiązania Logistyczne',
-        subtitleEn: 'Tailored freight engineering for high-volume supply chains, heavy machinery, out-of-gauge (OOG) project cargo, and recurring industrial lanes.',
-        subtitlePl: 'Dedykowane rozwiązania logistyczne dla ładunków gabarytowych (OOG), ciężkich maszyn i przemysłowych łańcuchów dostaw.',
+        titleEn: 'Heavy-Haul & Project Cargo',
+        titlePl: 'Transport Ponadgabarytowy i Project Cargo',
+        subtitleEn: 'We design and execute transport for out-of-gauge (OOG) cargo, heavy production lines, and industrial machinery.',
+        subtitlePl: 'Projektujemy i realizujemy transport ładunków ponadgabarytowych (OOG), ciężkich linii technologicznych oraz maszyn przemysłowych.',
         specsEn: [
             { bold: 'Heavy Machinery & Out-of-Gauge Chartering', desc: 'OOG Cargo' },
             { bold: 'Supply Chain Lead-Time & Cost Audits', desc: 'Cost Optimization' },
@@ -75,7 +75,7 @@ const servicesData = [
         ],
         buttonEn: 'Request Custom Routing',
         buttonPl: 'Zamów Projekt Trasy',
-        image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+        image: '/photos/services/solutions.webp',
         alt: 'Logistics cargo hub warehouse facility'
     },
     {
@@ -84,10 +84,10 @@ const servicesData = [
         labelPl: '04 DORADZTWO',
         eyebrowEn: 'TRADE ADVISORY & COMPLIANCE',
         eyebrowPl: 'DORADZTWO CELNE I REGULACYJNE',
-        titleEn: 'Supply Chain & Customs Consulting',
+        titleEn: 'Customs & Supply Chain Advisory',
         titlePl: 'Konsulting Celny i Architektura Łańcucha Dostaw',
-        subtitleEn: 'Strategic regulatory guidance and customs architecture designed to mitigate tariff risks, eliminate port delays, and secure critical cargo flows.',
-        subtitlePl: 'Doradztwo strategiczne i procedury celne zapobiegające opóźnieniom portowym oraz optymalizujące ryzyko taryfowe.',
+        subtitleEn: 'We safeguard supply chains against port delays and mitigate tariff and customs risks in international trade.',
+        subtitlePl: 'Zabezpieczamy łańcuchy dostaw przed opóźnieniami w portach oraz minimalizujemy ryzyka taryfowe i celne w handlu międzynarodowym.',
         specsEn: [
             { bold: 'HS Code Tariff Classification & AEO Protocols', desc: 'AEO Certified' },
             { bold: 'Lane Risk Mitigation & Sanction Screening', desc: 'Compliance Audit' },
@@ -100,7 +100,7 @@ const servicesData = [
         ],
         buttonEn: 'Consult an Advisor',
         buttonPl: 'Skonsultuj z Ekspertem',
-        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+        image: '/photos/services/consulting.webp',
         alt: 'B2B logistics strategy consulting session'
     },
     {
@@ -111,8 +111,8 @@ const servicesData = [
         eyebrowPl: 'METALE I SUROWCE PRZEMYSŁOWE',
         titleEn: 'Structural & Industrial Metal Supply',
         titlePl: 'Dostawy Metali Przemysłowych i Konstrukcyjnych',
-        subtitleEn: 'Direct-mill sourcing and strategic inventory distribution of structural, mechanical, and precision steel products for fabrication and construction.',
-        subtitlePl: 'Bezpośrednie dostawy z hut i dystrybucja wyrobów stalowych, konstrukcyjnych oraz precyzyjnych dla przemysłu.',
+        subtitleEn: 'We supply manufacturing plants directly from steel mills with structural steel, heavy plates, profiles, and precision tubing.',
+        subtitlePl: 'Zaopatrujemy zakłady produkcyjne bezpośrednio z hut w stal konstrukcyjną, blachy grube, profile oraz rury precyzyjne.',
         specsEn: [
             { bold: 'Coils, Heavy Plates & Structural Beams', desc: 'Direct-Mill Sourcing' },
             { bold: 'EN 10204 3.1/3.2 & ASTM Certified Quality', desc: 'Certified Mill Specs' },
@@ -125,7 +125,7 @@ const servicesData = [
         ],
         buttonEn: 'Request Metal Specs',
         buttonPl: 'Zapytaj o Specyfikację Metali',
-        image: 'https://unsplash.com/photos/ENiGFCmBYj4/download?w=1200',
+        image: '/photos/services/metals.webp',
         alt: 'Black and yellow metal tank'
     },
     {
@@ -134,10 +134,10 @@ const servicesData = [
         labelPl: '06 ŻUŻEL I KRUSZYWA',
         eyebrowEn: 'CIRCULAR INDUSTRIAL AGGREGATES',
         eyebrowPl: 'PRODUKTY UBOCZNE I KRUSZYWA HUTNICZE',
-        titleEn: 'Metallurgical Slag & Byproduct Sourcing',
+        titleEn: 'Metallurgical Slag & Byproduct Supply',
         titlePl: 'Dystrybucja Żużla i Produktów Ubocznych',
-        subtitleEn: 'Bulk distribution of controlled smelting aggregates and mineral byproducts engineered for high-durability road base, civil foundations, and concrete additives.',
-        subtitlePl: 'Hurtowa dystrybucja certyfikowanych kruszyw hutniczych i produktów ubocznych przeznaczonych do budowy dróg i fundamentów.',
+        subtitleEn: 'We deliver trainload volumes of certified smelting aggregates and industrial minerals for road construction and concrete manufacturing.',
+        subtitlePl: 'Dostarczamy w ilościach całopociągowych certyfikowane kruszywa pohutnicze i minerały na potrzeby podbudowy dróg oraz produkcji betonów.',
         specsEn: [
             { bold: 'Engineered Compaction Gradations', desc: '0–31.5mm / 0–63mm' },
             { bold: 'REACH-Compliant & Chemically Inert Materials', desc: 'Eco-Certified' },
@@ -150,7 +150,7 @@ const servicesData = [
         ],
         buttonEn: 'Inquire Aggregate Specs',
         buttonPl: 'Zapytaj o Specyfikację Kruszyw',
-        image: 'https://unsplash.com/photos/ZLzkwU49BdY/download?w=1200',
+        image: '/photos/services/slag.webp',
         alt: 'Large piece of molten metal being poured onto a machine'
     }
 ];
@@ -226,6 +226,8 @@ const Services = () => {
                                     <img
                                         src={activeService.image}
                                         alt={activeService.alt}
+                                        width="800"
+                                        height="533"
                                         className="absolute inset-0 w-full h-full object-cover filter contrast-[1.08] brightness-[0.92] saturate-[0.95]"
                                         loading="lazy"
                                     />
@@ -276,6 +278,8 @@ const Services = () => {
                                         key={service.key}
                                         src={service.image}
                                         alt={service.alt}
+                                        width="800"
+                                        height="533"
                                         loading="eager"
                                         decoding="async"
                                         fetchPriority={idx === 0 ? "high" : "auto"}
